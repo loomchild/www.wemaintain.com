@@ -1,0 +1,26 @@
+name: webflow-git
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '40 * * * *'
+
+jobs:
+  track:
+    name: Track Webflow site changes
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Process Webflow Sites
+        uses: loomchild/webflow-get@v1
+
+      - name: Commit and Push
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Webflow Git
+          author_email: webflowgit@local
+          message: 'Site updated'
