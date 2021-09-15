@@ -1,6 +1,4 @@
-# site: www.example.com
-# pages: true
-# OR
-# pages:
-#   ignore:
-#   - posts/
+pages:
+  ignore:
+    - /blog-posts/**
+    - /blog-categories/**
