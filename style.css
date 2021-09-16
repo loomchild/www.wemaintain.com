@@ -4756,7 +4756,6 @@ figcaption {
 }
 .blog-post-wrapper {
   max-width: 660px;
-  margin-top: 40px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -5313,6 +5312,9 @@ figcaption {
   -webkit-flex: 36px;
   -ms-flex: 36px;
   flex: 36px;
+}
+.blog-post-spacer {
+  height: 40px;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -6742,9 +6744,6 @@ figcaption {
     font-size: 10px;
     line-height: 12px;
   }
-  .blog-post-wrapper {
-    margin-top: 32px;
-  }
   .blog-post-content {
     font-size: 16px;
     line-height: 25px;
@@ -6861,5 +6860,8 @@ figcaption {
   }
   .testimonial-comment-pagination {
     margin-top: 32px;
+  }
+  .blog-post-spacer {
+    height: 32px;
   }
 }
