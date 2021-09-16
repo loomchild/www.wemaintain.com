@@ -4793,7 +4793,6 @@ figcaption {
 }
 .blog-post-content figcaption {
   margin-top: 12px;
-  margin-bottom: 64px;
   color: #999;
   font-size: 12px;
   line-height: 14px;
@@ -4819,7 +4818,7 @@ figcaption {
   border-radius: 8px;
 }
 .blog-post-content figure {
-  margin-bottom: 0;
+  margin-bottom: 64px;
 }
 .newsletter-cta-heading {
   margin-top: 0;
@@ -6771,9 +6770,6 @@ figcaption {
     margin-bottom: 4px;
     padding-left: 24px;
   }
-  .blog-post-content figcaption {
-    margin-bottom: 48px;
-  }
   .blog-post-content blockquote {
     margin-right: 4px;
     margin-bottom: 16px;
@@ -6783,6 +6779,9 @@ figcaption {
   }
   .blog-post-content img {
     margin-top: 28px;
+  }
+  .blog-post-content figure {
+    margin-bottom: 48px;
   }
   .newsletter-cta-heading {
     margin-top: 0;
