@@ -2650,9 +2650,6 @@ figcaption {
   -ms-flex-align: center;
   align-items: center;
 }
-.nav-menu.blog {
-  position: static;
-}
 .brand-full {
   max-width: none;
 }
@@ -5294,17 +5291,6 @@ figcaption {
 .dropdown-link-wrapper {
   padding: 14px 20px;
 }
-.testimonial-video-list-copy {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: -24px;
-  margin-left: -24px;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
 .menu-separator-left {
   min-width: 0;
   -webkit-box-flex: 36px;
@@ -5436,9 +5422,6 @@ figcaption {
     margin-left: 0;
     padding: 128px 60px 64px;
     background-color: #fff;
-  }
-  .nav-menu.blog {
-    position: absolute;
   }
   .brand-full {
     display: none;
