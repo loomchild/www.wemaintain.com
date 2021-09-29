@@ -697,17 +697,19 @@
                           .click(function (e) {
                             e.preventDefault();
 
-                            // Submit the form
-                            $(this).parents("form").submit();
+                            const myForm = document.getElementById("wf-form-Etre-contact---Resi-Paris");
 
                             // Capture values for Typeform
                             let kvpairs = [];
-                            for (let i = 0; i < form.elements.length; i++) {
-                              const e = form.elements[i];
+                            for (let i = 0; i < myForm.elements.length; i++) {
+                              const e = myForm.elements[i];
                               kvpairs.push(encodeURIComponent(e.name.toLowerCase()) + "=" + encodeURIComponent(e.value.toLowerCase()));
                             }
                             queryString = kvpairs.join("&");
                             link += "?" + queryString;
+
+                            // Submit the form
+                            $(myForm).submit();
 
                             createTypeformWidget(link);
                           });
