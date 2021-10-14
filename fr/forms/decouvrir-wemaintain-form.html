@@ -602,76 +602,15 @@
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
                           <div class="field-calculator">
-                            <label for="email-3" class="field-label">Votre e-mail</label
+                            <label for="Email-3" class="field-label">Votre e-mail</label
                             ><input
                               type="email"
                               class="field-calculator-input w-input"
                               maxlength="256"
-                              name="email-2"
-                              data-name="Email 2"
+                              name="Email"
+                              data-name="Email"
                               placeholder="camille@dupont.fr"
-                              id="email-2"
-                              x-ref="email"
-                              required=""
-                            />
-                          </div>
-                          <div class="form-button-wrapper">
-                            <a x-on:click="$refs.email.reportValidity() ? nextSlide() : false" href="#" class="button-contained important w-button">Calculer le prix</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-slide w-slide">
-                        <div class="form-slide-content">
-                          <div class="form-calculator-title"><h4>Vos coordonnées</h4></div>
-                          <div class="form-calculator-columns">
-                            <div class="form-calculator-column"></div>
-                            <div class="form-calculator-column"></div>
-                          </div>
-                          <label class="w-checkbox checkbox-field"
-                            ><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" required="" class="w-checkbox-input checkbox" /><span class="checkbox-label w-form-label"
-                              >J&#x27;accepte les
-                              <a href="https://assets-wm.s3.eu-west-3.amazonaws.com/Conditions+d&#x27;utilisation+du+site.pdf" target="_blank" class="link-fr"
-                                >conditions générales d&#x27;utilisation</a
-                              >.</span
-                            ></label
-                          >
-                          <div class="form-button-wrapper">
-                            <input type="submit" value="Recevoir ma proposition tarifaire" data-wait="Veuillez patienter..." class="button-contained important w-button" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-slider-arrow-left"></div>
-                    <div class="w-slider-arrow-right"></div>
-                    <div class="w-slider-nav w-round"></div>
-                  </div>
-                </div>
-              </form>
-              <div class="w-form-done"><div>Thank you! Your submission has been received!</div></div>
-              <div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-wrapper">
-          <div class="card">
-            <div class="form-block-calculator w-form">
-              <form id="email-form" name="email-form" data-name="Email Form">
-                <div x-data="slider">
-                  <div data-animation="outin" data-disable-swipe="1" data-duration="500" data-infinite="1" class="form-slider w-slider">
-                    <div class="w-slider-mask">
-                      <div class="form-slide w-slide">
-                        <div class="form-slide-content">
-                          <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div class="field-calculator">
-                            <label for="email-3" class="field-label">Votre e-mail</label
-                            ><input
-                              type="email"
-                              class="field-calculator-input w-input"
-                              maxlength="256"
-                              name="email-2"
-                              data-name="Email 2"
-                              placeholder="camille@dupont.fr"
-                              id="email-2"
+                              id="email"
                               x-ref="email"
                               required=""
                             />
@@ -685,48 +624,38 @@
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Vos coordonnées</h4></div>
                           <div class="w-row">
-                            <div class="w-col w-col-6 w-col-stack">
+                            <div class="w-col w-col-6">
                               <div class="field-calculator">
-                                <label for="name-3" class="field-label">Nom et prénom</label
-                                ><input
-                                  type="text"
-                                  class="field-calculator-input w-input"
-                                  autofocus="true"
-                                  maxlength="256"
-                                  name="name-2"
-                                  data-name="Name 2"
-                                  placeholder="Camille Dupont"
-                                  id="name-2"
-                                  required=""
-                                />
+                                <label for="Name-3" class="field-label">Nom et prénom</label
+                                ><input type="text" class="field-calculator-input w-input" maxlength="256" name="Name" data-name="Name" placeholder="Camille Dupont" id="name" required="" />
                               </div>
                               <div class="field-calculator">
-                                <label for="name-3" class="field-label">Adresse</label
-                                ><input type="text" class="field-calculator-input w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="1 rue de la Paix" id="name-2" required="" />
+                                <label for="address-2" class="field-label">Adresse</label
+                                ><input type="text" class="field-calculator-input w-input" maxlength="256" name="address" data-name="address" placeholder="1 rue de la Paix" id="address" required="" />
                               </div>
                             </div>
-                            <div class="w-col w-col-6 w-col-stack">
+                            <div class="w-col w-col-6">
                               <div class="field-calculator">
-                                <label for="phone-3" class="field-label">N° de téléphone</label
-                                ><input type="tel" class="field-calculator-input w-input" maxlength="256" name="phone-2" data-name="Phone 2" placeholder="0611223344" id="phone-2" required="" />
+                                <label for="Phone-3" class="field-label">N° de téléphone</label
+                                ><input type="tel" class="field-calculator-input w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="0611223344" id="phone" required="" />
                               </div>
                               <div class="field-calculator">
-                                <label for="name-3" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
+                                <label for="Syndic" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
                                 ><input
                                   type="text"
                                   class="field-calculator-input w-input"
                                   maxlength="256"
-                                  name="name-2"
-                                  data-name="Name 2"
+                                  name="Syndic"
+                                  data-name="Syndic"
                                   placeholder="Mon syndic bien aimé"
-                                  id="name-2"
+                                  id="syndic"
                                   required=""
                                 />
                               </div>
                             </div>
                           </div>
                           <label class="w-checkbox checkbox-field"
-                            ><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" required="" class="w-checkbox-input checkbox" /><span class="checkbox-label w-form-label"
+                            ><input type="checkbox" id="toc" name="toc" data-name="toc" required="" class="w-checkbox-input checkbox" /><span for="toc" class="checkbox-label w-form-label"
                               >J&#x27;accepte les
                               <a href="https://assets-wm.s3.eu-west-3.amazonaws.com/Conditions+d&#x27;utilisation+du+site.pdf" target="_blank" class="link-fr"
                                 >conditions générales d&#x27;utilisation</a
@@ -739,9 +668,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="w-slider-arrow-left"></div>
-                    <div class="w-slider-arrow-right"></div>
-                    <div class="w-slider-nav w-round"></div>
+                    <div class="hidden-slider-navogation w-slider-arrow-left"></div>
+                    <div class="hidden-slider-navogation w-slider-arrow-right"></div>
+                    <div class="hidden w-slider-nav w-round"></div>
                   </div>
                 </div>
               </form>
@@ -811,7 +740,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="(max-width: 479px) 100vw, 64px"
+                      sizes="64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
