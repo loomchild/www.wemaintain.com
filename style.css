@@ -2811,6 +2811,17 @@ figcaption {
 .flex-column.french {
   display: none;
 }
+.flex-column.form-header-new {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 640px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 .stats-card {
   position: relative;
   display: -webkit-box;
@@ -5307,6 +5318,31 @@ figcaption {
 .blog-post-spacer {
   height: 40px;
 }
+.form-background-new {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 640px;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/5f5aa0665c17fd18e945422b_Cercles%20couleur%20half%20%402x(2).png"),
+    linear-gradient(100deg, #333e8e, #272c6c);
+  background-position: -270px 50%, 0 0;
+  background-size: cover, auto;
+  background-repeat: no-repeat, repeat;
+}
+.form-slider {
+  height: auto;
+  background-color: transparent;
+}
+.form-previous {
+  display: none;
+}
+.form-wrapper {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;
@@ -6432,6 +6468,10 @@ figcaption {
   .mobile {
     display: block;
   }
+  .form-background-new {
+    background-position: -400px 50%, 0 0;
+    background-size: auto 1150px, auto;
+  }
 }
 @media screen and (max-width: 479px) {
   body {
@@ -6853,5 +6893,8 @@ figcaption {
   }
   .blog-post-spacer {
     height: 32px;
+  }
+  .form-background-new {
+    background-position: -600px 50%, 0 0;
   }
 }
