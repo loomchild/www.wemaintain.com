@@ -2935,6 +2935,11 @@ figcaption {
   font-size: 14px;
   line-height: 20px;
 }
+.field-label.alternative {
+  min-width: 196px;
+  font-size: 18px;
+  line-height: 28px;
+}
 .flex-columns {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5373,6 +5378,16 @@ figcaption {
   width: 100%;
   margin-bottom: 16px;
 }
+.field-calculator.alternative {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 .form-calculator-field-columns {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6092,6 +6107,11 @@ figcaption {
     margin-top: -166px;
     padding: 32px;
   }
+  .field-label.alternative {
+    min-width: auto;
+    font-size: 14px;
+    line-height: 20px;
+  }
   .flex-columns.zigzag {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -6557,6 +6577,9 @@ figcaption {
   .form-background-new {
     background-position: -400px 50%, 0 0;
     background-size: auto 1150px, auto;
+  }
+  .field-calculator.alternative {
+    display: block;
   }
 }
 @media screen and (max-width: 479px) {
