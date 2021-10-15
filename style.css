@@ -5417,6 +5417,9 @@ figcaption {
 .field-calculator-input:focus {
   border: 1px solid #272c6c;
 }
+.field-calculator-input.flat {
+  border-radius: 0;
+}
 .hidden-slider-navogation {
   display: none;
   width: 0;
@@ -5446,6 +5449,67 @@ figcaption {
 }
 .div-block-48 {
   margin-bottom: 20px;
+}
+.link-block {
+  width: 48px;
+  height: 48px;
+}
+.spinner-button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  background-color: #f9f9f9;
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+.spinner-button:hover {
+  background-color: #eee;
+}
+.spinner-button.decrease {
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/6169d0d28e9a410647a286af_Combined%20Shape.png");
+  background-position: 50% 50%;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+.spinner-button.increase {
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/6169d1141deec8277efdec5e_Combined%20Shape.png");
+  background-position: 50% 50%;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+.spinner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 164px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.spinner-input {
+  height: 48px;
+  margin-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-style: none solid;
+  border-width: 1px;
+  border-color: #000 #ccc;
+  background-color: #f9f9f9;
+  color: #252950;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+}
+.spinner-input:focus {
+  border: 1px solid #272c6c;
+}
+.spinner-input.flat {
+  border-radius: 0;
 }
 @media screen and (min-width: 1440px) {
   .navbar {

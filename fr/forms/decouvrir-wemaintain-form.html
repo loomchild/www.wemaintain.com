@@ -631,7 +631,22 @@
                             </select>
                           </div>
                           <div class="field-calculator">
-                            <input type="number" class="field-calculator-input w-input" max="99" maxlength="2" name="levels" data-name="levels" min="1" placeholder="--" id="levels" required="" />
+                            <div x-data="{}" class="spinner">
+                              <a x-on:click="$refs.input.value--" href="#" class="spinner-button decrease w-button"></a
+                              ><input
+                                type="number"
+                                class="spinner-input w-input"
+                                max="99"
+                                maxlength="2"
+                                name="levels"
+                                data-name="levels"
+                                min="1"
+                                placeholder="--"
+                                id="levels"
+                                x-ref="input"
+                                required=""
+                              /><a href="#" class="spinner-button increase w-button"></a>
+                            </div>
                           </div>
                           <div class="field-calculator alternative">
                             <label for="email-2" class="field-label alternative">Votre e-mail</label
