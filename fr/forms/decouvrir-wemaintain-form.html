@@ -621,8 +621,8 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div class="div-block-48">
-                            <select id="charge" name="Charge" required="" data-name="Charge" x-data="select" class="field-calculator-input w-select">
+                          <div class="field-calculator">
+                            <select id="charge" name="charge" required="" data-name="charge" x-data="select" class="field-calculator-input w-select">
                               <option value="">Faites un choix</option>
                               <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
                               <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
@@ -630,23 +630,30 @@
                               <option value="More">Plus de 1150 kg (+15 pers.)</option>
                             </select>
                           </div>
+                          <div class="field-calculator">
+                            <input type="number" class="field-calculator-input w-input" max="99" maxlength="2" name="levels" data-name="levels" min="1" placeholder="--" id="levels" required="" />
+                          </div>
                           <div class="field-calculator alternative">
-                            <label for="Email-3" class="field-label alternative">Votre e-mail</label
+                            <label for="email-2" class="field-label alternative">Votre e-mail</label
                             ><input
                               type="email"
                               class="field-calculator-input w-input"
                               maxlength="256"
-                              name="Email"
-                              data-name="Email"
+                              name="email"
+                              data-name="email"
                               placeholder="camille@dupont.fr"
                               x-on:keydown:enter:prevent="true"
                               id="email"
-                              x-ref="email"
                               required=""
                             />
                           </div>
                           <div class="form-button-wrapper">
-                            <a x-on:click="$refs.email.reportValidity() ? nextSlide() : false" href="#" class="button-contained important w-button">Calculer le prix</a>
+                            <a
+                              x-on:click="[...$el.closest(&#x27;.w-slide&#x27;).querySelectorAll(&#x27;input,select&#x27;)].every(i =&gt; i.reportValidity()) ? nextSlide() : false"
+                              href="#"
+                              class="button-contained important w-button"
+                              >Calculer le prix</a
+                            >
                           </div>
                         </div>
                       </div>
@@ -657,8 +664,8 @@
                           <div class="w-row">
                             <div class="w-col w-col-6">
                               <div class="field-calculator">
-                                <label for="Name-3" class="field-label">Nom et prénom</label
-                                ><input type="text" class="field-calculator-input w-input" maxlength="256" name="Name" data-name="Name" placeholder="Camille Dupont" id="name" required="" />
+                                <label for="name-2" class="field-label">Nom et prénom</label
+                                ><input type="text" class="field-calculator-input w-input" maxlength="256" name="name" data-name="name" placeholder="Camille Dupont" id="name" required="" />
                               </div>
                               <div class="field-calculator">
                                 <label for="address-2" class="field-label">Adresse</label
@@ -667,17 +674,17 @@
                             </div>
                             <div class="w-col w-col-6">
                               <div class="field-calculator">
-                                <label for="Phone-3" class="field-label">N° de téléphone</label
-                                ><input type="tel" class="field-calculator-input w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="0611223344" id="phone" required="" />
+                                <label for="phone-2" class="field-label">N° de téléphone</label
+                                ><input type="tel" class="field-calculator-input w-input" maxlength="256" name="phone" data-name="phone" placeholder="0611223344" id="phone" required="" />
                               </div>
                               <div class="field-calculator">
-                                <label for="Syndic" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
+                                <label for="syndic-2" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
                                 ><input
                                   type="text"
                                   class="field-calculator-input w-input"
                                   maxlength="256"
-                                  name="Syndic"
-                                  data-name="Syndic"
+                                  name="syndic"
+                                  data-name="syndic"
                                   placeholder="Mon syndic bien aimé"
                                   id="syndic"
                                   required=""
@@ -771,7 +778,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="(max-width: 479px) 100vw, 64px"
+                      sizes="64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
