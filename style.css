@@ -5511,6 +5511,9 @@ figcaption {
 .spinner-input.flat {
   border-radius: 0;
 }
+.prevent-enter-submit {
+  display: none;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;

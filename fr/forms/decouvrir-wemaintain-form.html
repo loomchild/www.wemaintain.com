@@ -603,6 +603,7 @@
           <div class="card">
             <div class="form-block-calculator w-form">
               <form id="email-form" name="email-form" data-name="Email Form">
+                <input type="submit" value="Submit" data-wait="Please wait..." x-bind:disabled="&#x27;&#x27;" x-data="{}" class="prevent-enter-submit w-button" />
                 <div x-data="slider">
                   <div
                     data-delay="4000"
@@ -631,8 +632,8 @@
                             </select>
                           </div>
                           <div class="field-calculator">
-                            <div x-data="{}" class="spinner">
-                              <a x-on:click="$refs.input.value--" href="#" class="spinner-button decrease w-button"></a
+                            <div x-data="spinner({ min: 1, max: 99 })" class="spinner">
+                              <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
                               ><input
                                 type="number"
                                 class="spinner-input w-input"
@@ -642,25 +643,15 @@
                                 data-name="levels"
                                 min="1"
                                 placeholder="--"
+                                x-model="value"
                                 id="levels"
-                                x-ref="input"
                                 required=""
-                              /><a href="#" class="spinner-button increase w-button"></a>
+                              /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
                             </div>
                           </div>
                           <div class="field-calculator alternative">
                             <label for="email-2" class="field-label alternative">Votre e-mail</label
-                            ><input
-                              type="email"
-                              class="field-calculator-input w-input"
-                              maxlength="256"
-                              name="email"
-                              data-name="email"
-                              placeholder="camille@dupont.fr"
-                              x-on:keydown:enter:prevent="true"
-                              id="email"
-                              required=""
-                            />
+                            ><input type="email" class="field-calculator-input w-input" maxlength="256" name="email" data-name="email" placeholder="camille@dupont.fr" id="email" required="" />
                           </div>
                           <div class="form-button-wrapper">
                             <a
@@ -793,7 +784,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="64px"
+                      sizes="(max-width: 479px) 100vw, 64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
@@ -921,6 +912,28 @@
             placeholder.setAttribute("selected", "");
             placeholder.setAttribute("disaabled", "");
             placeholder.setAttribute("hidden", "");
+          },
+        }));
+
+        Alpine.data("spinner", ({ min, max } = { min: null, max: null }) => ({
+          value: null,
+
+          decrease: {
+            ["@click"]() {
+              const value = this.value || 0;
+              if (min == null || value > min) {
+                this.value = value - 1;
+              }
+            },
+          },
+
+          increase: {
+            ["@click"]() {
+              const value = this.value || 0;
+              if (max == null || value < max) {
+                this.value = value + 1;
+              }
+            },
           },
         }));
       </script>
