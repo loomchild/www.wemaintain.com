@@ -5444,6 +5444,9 @@ figcaption {
 .form-calculator-column.right {
   margin-left: 16px;
 }
+.div-block-48 {
+  margin-bottom: 20px;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;

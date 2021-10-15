@@ -431,6 +431,14 @@
           break-inside: avoid;
         }
 
+        /* Forms */
+        select[x-data^="select"]:invalid {
+          color: #999;
+        }
+        select[x-data^="select"] option {
+          color: #252950;
+        }
+
         /* IE11 fixes */
         @media all and (-ms-high-contrast: none) {
           .navbar {

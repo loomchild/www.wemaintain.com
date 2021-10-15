@@ -447,6 +447,14 @@
           break-inside: avoid;
         }
 
+        /* Forms */
+        select[x-data^="select"]:invalid {
+          color: #999;
+        }
+        select[x-data^="select"] option {
+          color: #252950;
+        }
+
         /* IE11 fixes */
         @media all and (-ms-high-contrast: none) {
           .navbar {
@@ -596,18 +604,32 @@
             <div class="form-block-calculator w-form">
               <form id="email-form" name="email-form" data-name="Email Form">
                 <div x-data="slider">
-                  <div data-animation="outin" data-hide-arrows="1" data-disable-swipe="1" data-duration="500" data-infinite="1" class="form-slider w-slider">
+                  <div
+                    data-delay="4000"
+                    data-animation="outin"
+                    class="form-slider w-slider"
+                    data-autoplay="false"
+                    data-easing="ease"
+                    data-hide-arrows="true"
+                    data-disable-swipe="true"
+                    data-autoplay-limit="0"
+                    data-nav-spacing="3"
+                    data-duration="500"
+                    data-infinite="true"
+                  >
                     <div class="w-slider-mask">
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <select id="field" name="field" class="w-select">
-                            <option value="">Faites un choix</option>
-                            <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
-                            <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
-                            <option value="1150">Entre 631 et 1150 kg (8 à 15 pers.)</option>
-                            <option value="More">Plus de 1150 kg (+15 pers.)</option>
-                          </select>
+                          <div class="div-block-48">
+                            <select id="charge" name="Charge" required="" data-name="Charge" x-data="select" class="field-calculator-input w-select">
+                              <option value="">Faites un choix</option>
+                              <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
+                              <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
+                              <option value="1150">Entre 631 et 1150 kg (8 à 15 pers.)</option>
+                              <option value="More">Plus de 1150 kg (+15 pers.)</option>
+                            </select>
+                          </div>
                           <div class="field-calculator alternative">
                             <label for="Email-3" class="field-label alternative">Votre e-mail</label
                             ><input
@@ -749,7 +771,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="64px"
+                      sizes="(max-width: 479px) 100vw, 64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
@@ -869,7 +891,18 @@
       </div>
     </footer>
     <div class="w-embed w-script"><script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/index.js"></script></div>
-    <div class="custom-code w-embed w-script"><script></script></div>
+    <div class="custom-code w-embed w-script">
+      <script>
+        Alpine.data("select", () => ({
+          init() {
+            const placeholder = this.$el.firstChild;
+            placeholder.setAttribute("selected", "");
+            placeholder.setAttribute("disaabled", "");
+            placeholder.setAttribute("hidden", "");
+          },
+        }));
+      </script>
+    </div>
     <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f298dde59b99f6dcf794306"
       type="text/javascript"
