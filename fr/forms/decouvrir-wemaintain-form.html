@@ -602,7 +602,7 @@
         <div class="form-wrapper">
           <div class="card">
             <div class="form-block-calculator w-form">
-              <form id="email-form" name="email-form" data-name="Email Form">
+              <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form">
                 <input type="submit" value="Submit" data-wait="Please wait..." x-bind:disabled="&#x27;&#x27;" x-data="{}" class="prevent-enter-submit w-button" />
                 <div x-data="slider">
                   <div
@@ -622,31 +622,85 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div class="field-calculator">
-                            <select id="charge" name="charge" required="" data-name="charge" x-data="select" class="field-calculator-input w-select">
-                              <option value="">Faites un choix</option>
-                              <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
-                              <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
-                              <option value="1150">Entre 631 et 1150 kg (8 à 15 pers.)</option>
-                              <option value="More">Plus de 1150 kg (+15 pers.)</option>
-                            </select>
-                          </div>
-                          <div class="field-calculator">
-                            <div x-data="spinner({ min: 1, max: 99 })" class="spinner">
-                              <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
-                              ><input
-                                type="number"
-                                class="spinner-input w-input"
-                                max="99"
-                                maxlength="2"
-                                name="levels"
-                                data-name="levels"
-                                min="1"
-                                placeholder="--"
-                                x-model="value"
-                                id="levels"
-                                required=""
-                              /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
+                          <div class="elevator-table">
+                            <div class="elevator-row header">
+                              <div class="elevator-label-wrapper"><div>Appareil</div></div>
+                              <div class="elevator-charge-wrapper"><div>Charge supportée</div></div>
+                              <div class="elevator-floors-wrapper"><div>Nb. de niveaux</div></div>
+                            </div>
+                            <div class="elevator-row">
+                              <div class="elevator-label-wrapper"><div>Ascenseur 1</div></div>
+                              <div class="elevator-charge-wrapper">
+                                <select
+                                  data-name="[elevators][1][charge]"
+                                  name="[elevators][1][charge]"
+                                  required=""
+                                  id="[elevators][1][charge]"
+                                  x-data="select"
+                                  class="field-calculator-input w-select"
+                                >
+                                  <option value="">Faites un choix</option>
+                                  <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
+                                  <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
+                                  <option value="1150">Entre 631 et 1150 kg (8 à 15 pers.)</option>
+                                  <option value="More">Plus de 1150 kg (+15 pers.)</option>
+                                </select>
+                              </div>
+                              <div class="elevator-floors-wrapper">
+                                <div x-data="spinner({ min: 1, max: 99 })" class="spinner">
+                                  <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
+                                  ><input
+                                    type="number"
+                                    class="spinner-input w-input"
+                                    max="99"
+                                    maxlength="2"
+                                    name="[elevators][1][levels]"
+                                    data-name="[elevators][1][levels]"
+                                    min="1"
+                                    placeholder="--"
+                                    x-model="value"
+                                    id="[elevators][1][levels]"
+                                    required=""
+                                  /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="elevator-row">
+                              <div class="elevator-label-wrapper"><div>Ascenseur 1</div></div>
+                              <div class="elevator-charge-wrapper">
+                                <select
+                                  id="[elevators][2][charge]"
+                                  name="[elevators][2][charge]"
+                                  required=""
+                                  data-name="[elevators][2][charge]"
+                                  x-data="select"
+                                  class="field-calculator-input w-select"
+                                >
+                                  <option value="">Faites un choix</option>
+                                  <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
+                                  <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
+                                  <option value="1150">Entre 631 et 1150 kg (8 à 15 pers.)</option>
+                                  <option value="More">Plus de 1150 kg (+15 pers.)</option>
+                                </select>
+                              </div>
+                              <div class="elevator-floors-wrapper">
+                                <div x-data="spinner({ min: 1, max: 99 })" class="spinner">
+                                  <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
+                                  ><input
+                                    type="number"
+                                    class="spinner-input w-input"
+                                    max="99"
+                                    maxlength="2"
+                                    name="[elevators][2][levels]"
+                                    data-name="[elevators][2][levels]"
+                                    min="1"
+                                    placeholder="--"
+                                    x-model="value"
+                                    id="[elevators][2][levels]"
+                                    required=""
+                                  /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
+                                </div>
+                              </div>
                             </div>
                           </div>
                           <div class="field-calculator alternative">
@@ -685,16 +739,7 @@
                               </div>
                               <div class="field-calculator">
                                 <label for="syndic-2" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
-                                ><input
-                                  type="text"
-                                  class="field-calculator-input w-input"
-                                  maxlength="256"
-                                  name="syndic"
-                                  data-name="syndic"
-                                  placeholder="Mon syndic bien aimé"
-                                  id="syndic"
-                                  required=""
-                                />
+                                ><input type="text" maxlength="256" name="syndic" data-name="syndic" placeholder="Mon syndic bien aimé" id="syndic" class="field-calculator-input w-input" />
                               </div>
                             </div>
                           </div>
@@ -784,7 +829,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="(max-width: 479px) 100vw, 64px"
+                      sizes="64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
