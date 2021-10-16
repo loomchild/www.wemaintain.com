@@ -5616,6 +5616,18 @@ figcaption {
   width: 56px;
   text-align: center;
 }
+.form-calculator-price-wrapper {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.form-caluclator-price {
+  text-align: center;
+}
+.form-calculator-price-subtitle {
+  font-size: 21px;
+  line-height: 30px;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;
