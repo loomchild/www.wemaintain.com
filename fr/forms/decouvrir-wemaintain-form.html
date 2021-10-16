@@ -622,6 +622,14 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
+                          <div class="field-calculator alternative">
+                            <div class="field-label alternative">Nombre d’ascenseurs</div>
+                            <div x-data="spinner({ value: 1, min: 1, max: 9 })" class="elevator-spinner">
+                              <a x-bind="decrease" href="#" class="elevator-spinner-button decrease w-button"></a>
+                              <div x-text="value" class="elevator-spinner-counter">1</div>
+                              <a x-bind="increase" href="#" class="elevator-spinner-button increase w-button"></a>
+                            </div>
+                          </div>
                           <div class="elevator-table">
                             <div class="elevator-row header">
                               <div class="elevator-label-wrapper"><div>Appareil</div></div>
@@ -829,7 +837,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="64px"
+                      sizes="(max-width: 479px) 100vw, 64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
@@ -960,8 +968,8 @@
           },
         }));
 
-        Alpine.data("spinner", ({ min, max } = { min: null, max: null }) => ({
-          value: null,
+        Alpine.data("spinner", ({ value, min, max } = { value: null, min: null, max: null }) => ({
+          value,
 
           decrease: {
             ["@click"]() {
