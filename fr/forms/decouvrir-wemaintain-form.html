@@ -599,7 +599,7 @@
     </div>
     <div class="section wf-section">
       <div class="container w-container">
-        <div class="form-wrapper">
+        <div x-data="calculator" class="form-wrapper">
           <div class="card">
             <div class="form-block-calculator w-form">
               <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form">
@@ -698,7 +698,7 @@
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
                           <div class="form-calculator-price-wrapper">
-                            <h1>2 980€</h1>
+                            <h1 x-text="priceFormatted">2 980€</h1>
                             <div class="form-calculator-price-subtitle">prix HT / an pour vos 2 appareils</div>
                             <div class="form-calculator-promo">
                               <img
@@ -726,7 +726,18 @@
                             <div class="w-col w-col-6">
                               <div class="field-calculator">
                                 <label for="phone-2" class="field-label">N° de téléphone</label
-                                ><input type="tel" class="field-calculator-input w-input" maxlength="256" name="phone" data-name="phone" placeholder="0611223344" id="phone" required="" />
+                                ><input
+                                  type="tel"
+                                  class="field-calculator-input w-input"
+                                  x-on:input="format"
+                                  maxlength="256"
+                                  name="phone"
+                                  data-name="phone"
+                                  placeholder="0611223344"
+                                  id="phone"
+                                  required=""
+                                  x-data="phone({ country: &#x27;FR&#x27; })"
+                                />
                               </div>
                               <div class="field-calculator">
                                 <label for="syndic-2" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
@@ -820,7 +831,7 @@
                       width="64"
                       src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh.png"
                       alt="Yvette O. "
-                      sizes="64px"
+                      sizes="(max-width: 479px) 100vw, 64px"
                       srcset="
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-500.png 500w,
                         https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/5f8884a369d163e7f1643746_Yvette%20Ouchikh-p-800.png 800w,
@@ -941,6 +952,8 @@
     </footer>
     <div class="w-embed w-script"><script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/index.js"></script></div>
     <div class="custom-code w-embed w-script">
+      <script src="https://unpkg.com/libphonenumber-js@1.7.58/bundle/libphonenumber-max.js"></script>
+
       <script>
         Alpine.data("select", () => ({
           init() {
@@ -974,6 +987,26 @@
                 this.value = value + 1;
               }
             },
+          },
+        }));
+
+        Alpine.data("phone", ({ country } = {}) => ({
+          init() {
+            this.formatter = new libphonenumber.AsYouType(country);
+          },
+
+          format() {
+            this.formatter.reset();
+            const newValue = this.formatter.input(this.$el.value);
+            this.$el.value = newValue;
+          },
+        }));
+
+        Alpine.data("calculator", () => ({
+          price: 2970,
+
+          get priceFormatted() {
+            return new Intl.NumberFormat("fr-FR").format(this.price) + "€";
           },
         }));
       </script>
