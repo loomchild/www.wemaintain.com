@@ -447,6 +447,10 @@
           break-inside: avoid;
         }
 
+        .elevator-row:last-child {
+          border: none;
+        }
+
         /* Forms */
         select[x-data^="select"]:invalid {
           color: #999;
@@ -625,7 +629,7 @@
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
                           <div x-data="{ elevatorCount: 1 }" class="elevator-input">
                             <div class="field-calculator alternative">
-                              <div class="field-label alternative">Nombre d’ascenseurs</div>
+                              <div class="field-label elevators">Nombre d’ascenseurs</div>
                               <div x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" x-on:update="elevatorCount = $event.detail" class="elevator-spinner">
                                 <a x-bind="decrease" href="#" class="elevator-spinner-button decrease w-button"></a>
                                 <div x-text="value" class="elevator-spinner-counter">1</div>
@@ -636,26 +640,30 @@
                               <div class="elevator-row header">
                                 <div class="elevator-label-wrapper"><div>Appareil</div></div>
                                 <div class="elevator-charge-wrapper">
-                                  <div>Charge supportée</div>
-                                  <img
-                                    src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
-                                    loading="lazy"
-                                    width="16"
-                                    title="Information disponible dans la cabine de votre ascenseur."
-                                    alt=""
-                                    class="form-calculator-tooltip"
-                                  />
+                                  <div class="elevator-label-text">
+                                    <div>Charge supportée</div>
+                                    <img
+                                      src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
+                                      loading="lazy"
+                                      width="16"
+                                      title="Information disponible dans la cabine de votre ascenseur."
+                                      alt=""
+                                      class="form-calculator-tooltip"
+                                    />
+                                  </div>
                                 </div>
                                 <div class="elevator-floors-wrapper">
-                                  <div>Nb. de niveaux</div>
-                                  <img
-                                    src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
-                                    loading="lazy"
-                                    width="16"
-                                    title="Comptez ici le les étages, mais également  parkings, sous-sols et caves."
-                                    alt=""
-                                    class="form-calculator-tooltip"
-                                  />
+                                  <div class="elevator-label-text">
+                                    <div>Nb. de niveaux</div>
+                                    <img
+                                      src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
+                                      loading="lazy"
+                                      width="16"
+                                      title="Comptez ici le les étages, mais également  parkings, sous-sols et caves."
+                                      alt=""
+                                      class="form-calculator-tooltip"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                               <div x-for="i in elevatorCount" class="elevator-row">
@@ -663,6 +671,19 @@
                                   <div>Ascenseur <span x-text="i">1</span></div>
                                 </div>
                                 <div class="elevator-charge-wrapper">
+                                  <div class="elevator-mobile-label">
+                                    <div class="elevator-label-text">
+                                      <div>Charge supportée</div>
+                                      <img
+                                        src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
+                                        loading="lazy"
+                                        width="16"
+                                        title="Information disponible dans la cabine de votre ascenseur."
+                                        alt=""
+                                        class="form-calculator-tooltip"
+                                      />
+                                    </div>
+                                  </div>
                                   <select
                                     data-name="[elevators][1][charge]"
                                     name="[elevators][1][charge]"
@@ -680,6 +701,19 @@
                                   </select>
                                 </div>
                                 <div class="elevator-floors-wrapper">
+                                  <div class="elevator-mobile-label">
+                                    <div class="elevator-label-text">
+                                      <div>Nb. de niveaux</div>
+                                      <img
+                                        src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
+                                        loading="lazy"
+                                        width="16"
+                                        title="Comptez ici le les étages, mais également  parkings, sous-sols et caves."
+                                        alt=""
+                                        class="form-calculator-tooltip"
+                                      />
+                                    </div>
+                                  </div>
                                   <div x-data="spinner({ min: 1, max: 99 })" class="spinner">
                                     <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
                                     ><input
@@ -719,7 +753,7 @@
                         <div class="form-slide-content calculate">
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
                           <div x-cloak="1" x-if="price" class="form-calculator-price-wrapper uncloak">
-                            <h1 x-text="priceFormatted">2 980€</h1>
+                            <h1 x-text="priceFormatted" class="no-margin">2 980€</h1>
                             <div class="form-calculator-price-subtitle">prix HT / an pour vos 2 appareils</div>
                             <div class="form-calculator-promo">
                               <img
@@ -734,8 +768,8 @@
                             <div class="w-embed"><input type="hidden" name="price" x-bind:value="price" /></div>
                           </div>
                           <div class="form-calculator-title"><h4>Vos coordonnées</h4></div>
-                          <div class="w-row">
-                            <div class="w-col w-col-6">
+                          <div class="form-calculator-columns">
+                            <div class="form-calculator-column">
                               <div class="field-calculator">
                                 <label for="name-2" class="field-label">Nom et prénom</label
                                 ><input type="text" class="field-calculator-input w-input" maxlength="256" name="name" data-name="name" placeholder="Camille Dupont" id="name" required="" />
@@ -745,7 +779,7 @@
                                 ><input type="text" class="field-calculator-input w-input" maxlength="256" name="address" data-name="address" placeholder="1 rue de la Paix" id="address" required="" />
                               </div>
                             </div>
-                            <div class="w-col w-col-6">
+                            <div class="form-calculator-column">
                               <div class="field-calculator">
                                 <label for="phone-2" class="field-label">N° de téléphone</label
                                 ><input
@@ -767,7 +801,7 @@
                               </div>
                             </div>
                           </div>
-                          <label class="w-checkbox checkbox-field"
+                          <label class="w-checkbox checkbox-field calculator"
                             ><input type="checkbox" id="toc" name="toc" data-name="toc" required="" class="w-checkbox-input checkbox" /><span for="toc" class="checkbox-label w-form-label"
                               >J&#x27;accepte les
                               <a href="https://assets-wm.s3.eu-west-3.amazonaws.com/Conditions+d&#x27;utilisation+du+site.pdf" target="_blank" class="link-fr"

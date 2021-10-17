@@ -2938,7 +2938,8 @@ figcaption {
   font-size: 14px;
   line-height: 20px;
 }
-.field-label.alternative {
+.field-label.alternative,
+.field-label.elevators {
   min-width: 196px;
   margin-bottom: 0;
   font-size: 18px;
@@ -3057,9 +3058,10 @@ figcaption {
   text-decoration: none;
 }
 .checkbox {
-  width: 18px;
   height: 18px;
-  margin-top: 0;
+  min-height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
   margin-right: 8px;
   padding: 3px;
   color: #272c6c;
@@ -3069,10 +3071,14 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.checkbox-field.calculator {
+  margin-top: 6px;
+  margin-bottom: 16px;
 }
 .form-success-image {
   position: absolute;
@@ -5440,20 +5446,27 @@ figcaption {
   height: 0;
 }
 .form-calculator-title {
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
 .form-calculator-columns {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-right: -16px;
+  margin-left: -16px;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .form-calculator-column {
   width: 50%;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 .form-calculator-column.left {
   margin-right: 16px;
@@ -5532,7 +5545,7 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 24px 16px 25px;
+  padding: 24px 16px;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -5541,18 +5554,13 @@ figcaption {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid #d8d8ef;
+  border-bottom: 1px solid #d8d8ef;
 }
 .elevator-row.header {
-  border-top-style: none;
   background-color: #fafafb;
   font-weight: 600;
 }
 .elevator-charge-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   width: 244px;
   margin-right: 16px;
   margin-left: 16px;
@@ -5562,10 +5570,6 @@ figcaption {
   align-items: center;
 }
 .elevator-floors-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   width: 164px;
   margin-right: 16px;
   margin-left: 16px;
@@ -5716,6 +5720,24 @@ figcaption {
   background-position: 50% 50%;
   background-size: auto 440px;
   background-repeat: no-repeat;
+}
+.heading-34 {
+  margin-top: 0;
+}
+.elevator-label-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.elevator-mobile-label {
+  display: none;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -6194,11 +6216,9 @@ figcaption {
     padding-bottom: 0;
     background-color: #d8d8ef;
   }
-  .elevator-charge-wrapper {
-    width: 155px;
-  }
+  .elevator-charge-wrapper,
   .elevator-floors-wrapper {
-    width: 158px;
+    width: 155px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -6391,8 +6411,10 @@ figcaption {
   }
   .field-label.alternative {
     min-width: auto;
+    margin-bottom: 8px;
     font-size: 14px;
     line-height: 20px;
+    font-weight: 600;
   }
   .flex-columns.zigzag {
     margin-top: 60px;
@@ -6863,8 +6885,48 @@ figcaption {
   .field-calculator.alternative {
     display: block;
   }
+  .form-calculator-column,
+  .spinner {
+    width: 100%;
+  }
+  .elevator-row {
+    padding-right: 24px;
+    padding-left: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .elevator-row.header {
+    display: none;
+  }
+  .elevator-charge-wrapper {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .elevator-floors-wrapper {
+    width: 100%;
+  }
+  .elevator-label-wrapper {
+    margin-bottom: 24px;
+  }
+  .elevator-spinner {
+    margin-top: 18px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
   .form-calculator-dots {
     display: none;
+  }
+  .form-c {
+    width: 1px;
+    height: 10px;
+  }
+  .elevator-mobile-label {
+    display: block;
   }
 }
 @media screen and (max-width: 479px) {
@@ -6978,6 +7040,9 @@ figcaption {
   }
   .header-sprite.property-france {
     top: 540px;
+  }
+  .checkbox-field.calculator {
+    margin-top: 16px;
   }
   .form-background {
     background-position: -600px 50%, 0 0;
@@ -7290,5 +7355,27 @@ figcaption {
   }
   .form-calculator-background {
     background-position: -600px 50%, 0 0;
+  }
+  .form-block-calculator {
+    padding: 32px;
+  }
+  .form-button-wrapper {
+    margin-top: 32px;
+  }
+  .form-calculator-price-wrapper.uncloak {
+    margin-top: 0;
+    margin-bottom: 48px;
+  }
+  .form-calculator-price-subtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .form-calculator-promo {
+    margin-top: 24px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .form-calculator-promo-text {
+    margin-left: 16px;
   }
 }
