@@ -2772,6 +2772,9 @@ figcaption {
 .header-title {
   margin-top: 16px;
 }
+.header-title.narrow {
+  max-width: 600px;
+}
 .header-overtitle {
   color: #6d709c;
   text-transform: uppercase;
@@ -4260,6 +4263,10 @@ figcaption {
   align-items: center;
   text-align: center;
 }
+.header-wrapper.form-calculator {
+  position: relative;
+  max-width: 800px;
+}
 .press-columns {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5325,7 +5332,7 @@ figcaption {
 .blog-post-spacer {
   height: 40px;
 }
-.form-background-new {
+.form-calculator-background {
   position: absolute;
   left: 0;
   top: 0;
@@ -5333,11 +5340,12 @@ figcaption {
   bottom: 0;
   z-index: -1;
   height: 640px;
-  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/5f5aa0665c17fd18e945422b_Cercles%20couleur%20half%20%402x(2).png"),
+  background-image: radial-gradient(
+      circle farthest-corner at 51% 57%,
+      #414092,
+      #272c6c
+    ),
     linear-gradient(100deg, #333e8e, #272c6c);
-  background-position: -270px 50%, 0 0;
-  background-size: cover, auto;
-  background-repeat: no-repeat, repeat;
 }
 .form-slider {
   height: auto;
@@ -5668,6 +5676,46 @@ figcaption {
 }
 .form-calculator-tooltip {
   margin-left: 8px;
+}
+.form-calculator-header-wrapper {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 192px;
+  text-align: center;
+}
+.narrow {
+  max-width: 680px;
+}
+.form-calculator-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto -50px;
+}
+.form-calculator-header-sprite-left {
+  position: absolute;
+  left: -90px;
+  bottom: 54px;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616c7dbb9c8d49a52d258503_Left.png");
+  background-position: 0 0;
+  background-size: 83px;
+}
+.form-calculator-header-sprite-right {
+  position: absolute;
+  right: -90px;
+  bottom: 200px;
+}
+.form-calculator-dots {
+  position: absolute;
+  left: -135px;
+  right: -135px;
+  bottom: -168px;
+  z-index: -1;
+  height: 480px;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/5f44e55104d55430f5ef8bcb_Pattern_%20points.png");
+  background-position: 50% 50%;
+  background-size: auto 440px;
+  background-repeat: no-repeat;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -6010,6 +6058,9 @@ figcaption {
   .phone-link-separator {
     display: none;
   }
+  .header-wrapper.form-calculator {
+    max-width: 580px;
+  }
   .press-columns {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6142,6 +6193,12 @@ figcaption {
     padding-right: 0;
     padding-bottom: 0;
     background-color: #d8d8ef;
+  }
+  .elevator-charge-wrapper {
+    width: 155px;
+  }
+  .elevator-floors-wrapper {
+    width: 158px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -6799,12 +6856,15 @@ figcaption {
   .mobile {
     display: block;
   }
-  .form-background-new {
+  .form-calculator-background {
     background-position: -400px 50%, 0 0;
     background-size: auto 1150px, auto;
   }
   .field-calculator.alternative {
     display: block;
+  }
+  .form-calculator-dots {
+    display: none;
   }
 }
 @media screen and (max-width: 479px) {
@@ -7228,7 +7288,7 @@ figcaption {
   .blog-post-spacer {
     height: 32px;
   }
-  .form-background-new {
+  .form-calculator-background {
     background-position: -600px 50%, 0 0;
   }
 }
