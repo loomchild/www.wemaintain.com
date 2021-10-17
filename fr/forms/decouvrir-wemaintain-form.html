@@ -634,8 +634,28 @@
                             <div class="elevator-table">
                               <div class="elevator-row header">
                                 <div class="elevator-label-wrapper"><div>Appareil</div></div>
-                                <div class="elevator-charge-wrapper"><div>Charge supportée</div></div>
-                                <div class="elevator-floors-wrapper"><div>Nb. de niveaux</div></div>
+                                <div class="elevator-charge-wrapper">
+                                  <div>Charge supportée</div>
+                                  <img
+                                    src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
+                                    loading="lazy"
+                                    width="16"
+                                    title="Information disponible dans la cabine de votre ascenseur."
+                                    alt=""
+                                    class="form-calculator-tooltip"
+                                  />
+                                </div>
+                                <div class="elevator-floors-wrapper">
+                                  <div>Nb. de niveaux</div>
+                                  <img
+                                    src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png"
+                                    loading="lazy"
+                                    width="16"
+                                    title="Comptez ici le les étages, mais également  parkings, sous-sols et caves."
+                                    alt=""
+                                    class="form-calculator-tooltip"
+                                  />
+                                </div>
                               </div>
                               <div x-for="i in elevatorCount" class="elevator-row">
                                 <div class="elevator-label-wrapper">
@@ -686,7 +706,7 @@
                           </div>
                           <div class="form-button-wrapper">
                             <a
-                              x-on:click="[...$el.closest(&#x27;.w-slide&#x27;).querySelectorAll(&#x27;input,select&#x27;)].every(i =&gt; i.reportValidity()) ? nextSlide() : false"
+                              x-on:click="if ([...$el.closest(&#x27;.w-slide&#x27;).querySelectorAll(&#x27;input,select&#x27;)].every(i =&gt; i.reportValidity())) { calculate(); nextSlide() }"
                               href="#"
                               class="button-contained important w-button"
                               >Calculer le prix</a
@@ -695,9 +715,9 @@
                         </div>
                       </div>
                       <div class="form-slide w-slide">
-                        <div class="form-slide-content">
+                        <div class="form-slide-content calculate">
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
-                          <div class="form-calculator-price-wrapper">
+                          <div x-cloak="1" x-if="price" class="form-calculator-price-wrapper uncloak">
                             <h1 x-text="priceFormatted">2 980€</h1>
                             <div class="form-calculator-price-subtitle">prix HT / an pour vos 2 appareils</div>
                             <div class="form-calculator-promo">
@@ -1003,10 +1023,19 @@
         }));
 
         Alpine.data("calculator", () => ({
-          price: 2970,
+          price: null,
 
           get priceFormatted() {
+            if (this.price == null) {
+              return "";
+            }
+
             return new Intl.NumberFormat("fr-FR").format(this.price) + "€";
+          },
+
+          calculate() {
+            console.log("Calculating price...");
+            this.price = Math.round(1000 + Math.random() * 9000);
           },
         }));
       </script>
