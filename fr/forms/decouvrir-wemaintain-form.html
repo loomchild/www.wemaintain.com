@@ -602,7 +602,7 @@
         <div x-data="calculator" class="form-wrapper">
           <div class="card">
             <div class="form-block-calculator w-form">
-              <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form">
+              <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form" data-track-form="Calculator FR">
                 <input type="submit" value="Submit" data-wait="Please wait..." x-bind:disabled="&#x27;&#x27;" x-data="{}" class="prevent-enter-submit w-button" />
                 <div x-data="slider">
                   <div
@@ -730,6 +730,7 @@
                               />
                               <div class="form-calculator-promo-text">Bénéficiez d’un an de maintenance gratuite en signant le contrat avant le 16/12/2021 !</div>
                             </div>
+                            <div class="w-embed"><input type="hidden" name="price" x-bind:value="price" /></div>
                           </div>
                           <div class="form-calculator-title"><h4>Vos coordonnées</h4></div>
                           <div class="w-row">
