@@ -600,7 +600,7 @@
       </div>
       <div class="container w-container">
         <div class="header-wrapper form-calculator">
-          <h1 class="header-title narrow white">Profitez d’1 an de  maintenance gratuite !</h1>
+          <h1 class="header-title narrow white">Profitez d’1 an de maintenance gratuite !</h1>
           <h5 class="header-subtitle narrow white lighter">Offre valable pour toute souscription à un contrat de 3 ans avant le 16/12/2021.</h5>
         </div>
       </div>
@@ -745,7 +745,7 @@
                           </div>
                           <div class="form-button-wrapper">
                             <a
-                              x-on:click="if ([...$el.closest(&#x27;.w-slide&#x27;).querySelectorAll(&#x27;input,select&#x27;)].every(i =&gt; i.reportValidity())) { calculate(); nextSlide() }"
+                              x-on:click="if ([...$el.closest(&#x27;.w-slide&#x27;).querySelectorAll(&#x27;input,select&#x27;)].every(i =&gt; i.reportValidity())) { calculate(); nextSlide(); scrollTo({ top: 340, left: 0, behavior: &#x27;smooth&#x27; }) }"
                               href="#"
                               class="button-contained important w-button"
                               >Calculer le prix</a
