@@ -447,11 +447,20 @@
           break-inside: avoid;
         }
 
+        /* Forms */
         .elevator-row:last-child {
           border: none;
         }
 
-        /* Forms */
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: no-repeat center right 12px url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616d5da2bb2506ec936752fa_Icons%20_%2024px%20_%20Outline%20_%20Reduce%20Blue.png");
+          background-size: 24px;
+          padding-right: 42px !important;
+        }
+
         select[x-data^="select"]:invalid {
           color: #999;
         }
