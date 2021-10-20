@@ -5568,6 +5568,7 @@ figcaption {
 }
 .elevator-row.header {
   background-color: #fafafb;
+  color: #272c6c;
   font-weight: 600;
 }
 .elevator-charge-wrapper {
@@ -5595,6 +5596,7 @@ figcaption {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  color: #252950;
 }
 .elevator-table {
   overflow: hidden;
@@ -5646,6 +5648,7 @@ figcaption {
 }
 .elevator-spinner-counter {
   width: 56px;
+  color: #252950;
   font-size: 18px;
   line-height: 28px;
   text-align: center;
@@ -5678,6 +5681,7 @@ figcaption {
   -ms-flex-align: center;
   align-items: center;
   border: 1px solid #50c392;
+  border-radius: 4px;
   background-color: rgba(80, 195, 146, 0.06);
   color: #50c392;
   text-align: left;

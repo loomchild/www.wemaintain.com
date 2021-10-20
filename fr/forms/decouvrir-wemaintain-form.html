@@ -640,7 +640,7 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div x-data="{ elevatorCount: 1 }" class="elevator-input">
+                          <div class="elevator-input">
                             <div class="field-calculator alternative">
                               <div class="field-label elevators">Nombre d’ascenseurs</div>
                               <div x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" x-on:update="elevatorCount = $event.detail" class="elevator-spinner">
@@ -767,7 +767,7 @@
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
                           <div x-cloak="1" x-if="price" class="form-calculator-price-wrapper uncloak">
                             <h1 x-text="priceFormatted" class="no-margin">2 980€</h1>
-                            <div class="form-calculator-price-subtitle">prix HT / an pour vos 2 appareils</div>
+                            <div class="form-calculator-price-subtitle">prix HT / an pour vos <span x-text="elevatorCount">X</span> appareils</div>
                             <div class="form-calculator-promo">
                               <img
                                 src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616b1a2b24f0621e078b98c9_Icons%20_%2024px%20_%20Outline%20_%20Victory.png"
@@ -1072,6 +1072,7 @@
         }));
 
         Alpine.data("calculator", () => ({
+          elevatorCount: 1,
           price: null,
 
           get priceFormatted() {
