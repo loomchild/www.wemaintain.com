@@ -4227,11 +4227,16 @@ figcaption {
   cursor: default;
 }
 .tooltip.calculator {
-  left: 50%;
+  left: 4px;
   top: auto;
-  bottom: 60px;
-  max-width: 148px;
+  bottom: 36px;
+  display: none;
+  width: 148px;
   padding: 20px;
+  opacity: 0;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: normal;
 }
 .tooltip-wrapper {
   position: relative;
@@ -5574,6 +5579,7 @@ figcaption {
   border-bottom: 1px solid #d8d8ef;
 }
 .elevator-row.header {
+  border-radius: 8px 8px 0 0;
   background-color: #fafafb;
   color: #272c6c;
   font-weight: 600;
@@ -5606,7 +5612,6 @@ figcaption {
   color: #252950;
 }
 .elevator-table {
-  overflow: hidden;
   margin-top: 32px;
   margin-bottom: 50px;
   border: 1px solid #d8d8ef;
@@ -5699,9 +5704,6 @@ figcaption {
 .form-calculator-promo-text {
   margin-left: 20px;
 }
-.form-calculator-tooltip {
-  margin-left: 8px;
-}
 .form-calculator-header-wrapper {
   max-width: 680px;
   margin-right: auto;
@@ -5746,7 +5748,6 @@ figcaption {
   margin-top: 0;
 }
 .elevator-label-text {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5790,6 +5791,24 @@ figcaption {
 }
 .form-calculator-tooltip-text {
   display: none;
+}
+.form-calculator-tooltip-wrapper {
+  position: relative;
+  margin-left: 8px;
+  line-height: 16px;
+}
+.tooltip-layer {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid rgba(0, 0, 0, 0.8);
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  -webkit-transform: translate(-4px, 0);
+  -ms-transform: translate(-4px, 0);
+  transform: translate(-4px, 0);
 }
 @media screen and (min-width: 1440px) {
   .navbar {
