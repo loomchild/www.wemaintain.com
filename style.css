@@ -5763,6 +5763,17 @@ figcaption {
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
+.success-message-calculator {
+  padding: 120px 32px 140px;
+  background-color: transparent;
+  font-size: 21px;
+  line-height: 30px;
+}
+.success-message-calculator-container {
+  max-width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;
