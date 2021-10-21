@@ -4226,6 +4226,13 @@ figcaption {
   white-space: nowrap;
   cursor: default;
 }
+.tooltip.calculator {
+  left: 50%;
+  top: auto;
+  bottom: 60px;
+  max-width: 148px;
+  padding: 20px;
+}
 .tooltip-wrapper {
   position: relative;
 }
@@ -5739,6 +5746,7 @@ figcaption {
   margin-top: 0;
 }
 .elevator-label-text {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5764,6 +5772,7 @@ figcaption {
   transform: translate(-50%, 0);
 }
 .success-message-calculator {
+  position: relative;
   padding: 120px 32px 140px;
   background-color: transparent;
   font-size: 21px;
@@ -5773,6 +5782,14 @@ figcaption {
   max-width: 300px;
   margin-right: auto;
   margin-left: auto;
+}
+.success-message-calculator-image {
+  position: absolute;
+  left: -30px;
+  top: 80px;
+}
+.form-calculator-tooltip-text {
+  display: none;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -7427,5 +7444,11 @@ figcaption {
   .header-form-calculator-sprite-wrapper {
     width: 520px;
     max-width: 136%;
+  }
+  .success-message-calculator {
+    padding-top: 110px;
+    padding-bottom: 130px;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
