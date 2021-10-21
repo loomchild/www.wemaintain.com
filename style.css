@@ -4230,10 +4230,9 @@ figcaption {
   left: 4px;
   top: auto;
   bottom: 36px;
-  display: none;
   width: 148px;
   padding: 20px;
-  opacity: 0;
+  opacity: 1;
   font-size: 12px;
   line-height: 18px;
   white-space: normal;
@@ -5797,7 +5796,7 @@ figcaption {
   margin-left: 8px;
   line-height: 16px;
 }
-.tooltip-layer {
+.tooltip-arrow {
   position: absolute;
   left: 50%;
   bottom: -8px;
