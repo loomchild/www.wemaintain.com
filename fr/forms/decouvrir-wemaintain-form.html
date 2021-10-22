@@ -764,6 +764,7 @@
                             <label for="email-2" class="field-label alternative">Votre e-mail</label
                             ><input type="email" class="field-calculator-input w-input" maxlength="256" name="email" data-name="email" placeholder="camille@dupont.fr" id="email" required="" />
                           </div>
+                          <div class="hidden-fields w-embed"><input type="hidden" name="price" x-bind:value="price" /> <input type="hidden" name="elevatorcount" x-bind:value="elevatorCount" /></div>
                           <div class="form-button-wrapper">
                             <a
                               id="calculate-price"
@@ -791,7 +792,6 @@
                               />
                               <div class="form-calculator-promo-text">Bénéficiez d’un an de maintenance gratuite en signant le contrat avant le 16/12/2021 !</div>
                             </div>
-                            <div class="w-embed"><input type="hidden" name="price" x-bind:value="price" /></div>
                           </div>
                           <div class="form-calculator-title"><h4>Vos coordonnées</h4></div>
                           <div class="form-calculator-columns">
