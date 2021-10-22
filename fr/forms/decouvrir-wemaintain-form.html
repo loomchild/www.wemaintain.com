@@ -717,13 +717,14 @@
                                     x-data="select"
                                     x-bind:name="`[elevators][${i}][charge]`"
                                     x-bind:data-name="`[elevators][${i}][charge]`"
+                                    x-on:change="elevators[i-1].charge = Number($event.target.value)"
                                     class="field-calculator-input w-select"
                                   >
                                     <option value="">Faites un choix</option>
-                                    <option value="300">Moins de 300 kg (1 à 4 pers.)</option>
-                                    <option value="630">Entre 301 et 630 kg (5 à 8 pers.)</option>
-                                    <option value="1150">Entre 631 et 1150 kg (8 à 15 pers.)</option>
-                                    <option value="More">Plus de 1150 kg (+15 pers.)</option>
+                                    <option value="0">Moins de 300 kg (1 à 4 pers.)</option>
+                                    <option value="1">Entre 301 et 630 kg (5 à 8 pers.)</option>
+                                    <option value="2">Entre 631 et 1150 kg (8 à 15 pers.)</option>
+                                    <option value="3">Plus de 1150 kg (+15 pers.)</option>
                                   </select>
                                 </div>
                                 <div class="elevator-floors-wrapper">
@@ -743,20 +744,21 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div x-data="spinner({ min: 1, max: 99 })" class="spinner">
+                                  <div x-data="spinner({ min: 1, max: 99 })" x-on:update="elevators[i-1].floors = $event.detail" class="spinner">
                                     <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
                                     ><input
                                       type="number"
                                       class="spinner-input w-input"
                                       max="99"
-                                      x-bind:data-name="`[elevators][${i}][levels]`"
+                                      x-bind:data-name="`[elevators][${i}][floors]`"
                                       maxlength="2"
-                                      name="[elevators][1][levels]"
-                                      data-name="[elevators][1][levels]"
+                                      name="[elevators][1][floors]"
+                                      data-name="[elevators][1][floors]"
                                       x-model:number="value"
                                       min="1"
-                                      x-bind:name="`[elevators][${i}][levels]`"
+                                      x-bind:name="`[elevators][${i}][floors]`"
                                       placeholder="--"
+                                      id="[elevators][1][floors]"
                                       required=""
                                     /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
                                   </div>
@@ -1129,9 +1131,28 @@
           },
         }));
 
+        function emptyElevator() {
+          return { charge: null, floors: null };
+        }
+
         Alpine.data("calculator", () => ({
-          elevatorCount: 1,
+          elevators: [emptyElevator()],
           price: null,
+
+          get elevatorCount() {
+            return this.elevators.length;
+          },
+
+          set elevatorCount(elevatorCount) {
+            const difference = elevatorCount - this.elevators.length;
+            if (difference < 0) {
+              this.elevators.splice(difference, -difference);
+            } else if (difference > 0) {
+              for (let i = 0; i < difference; ++i) {
+                this.elevators.push(emptyElevator());
+              }
+            }
+          },
 
           get priceFormatted() {
             if (this.price == null) {
