@@ -721,10 +721,10 @@
                                     class="field-calculator-input w-select"
                                   >
                                     <option value="">Faites un choix</option>
-                                    <option value="0">Moins de 300 kg (1 à 4 pers.)</option>
-                                    <option value="1">Entre 301 et 630 kg (5 à 8 pers.)</option>
-                                    <option value="2">Entre 631 et 1150 kg (8 à 15 pers.)</option>
-                                    <option value="3">Plus de 1150 kg (+15 pers.)</option>
+                                    <option value="1">Moins de 300 kg (1 à 4 pers.)</option>
+                                    <option value="2">Entre 301 et 630 kg (5 à 8 pers.)</option>
+                                    <option value="3">Entre 631 et 1150 kg (8 à 15 pers.)</option>
+                                    <option value="4">Plus de 1150 kg (+15 pers.)</option>
                                   </select>
                                 </div>
                                 <div class="elevator-floors-wrapper">
@@ -1135,6 +1135,27 @@
           return { charge: null, floors: null };
         }
 
+        function calculateElevatorPrice(charge, floors) {
+          return 1500 + (floors - 1) * 25 + (charge - 1) * 150;
+        }
+
+        function calculatePrice(elevators) {
+          if (elevators.lenght === 0) {
+            throw new Error("No elevators");
+          }
+
+          let price = 0;
+
+          for (let elevator of elevators) {
+            if (!elevator || elevator.charge == null || elevator.charge < 1 || elevator.floors == null || elevator.floors < 1 || elevator.floors > 99) {
+              throw new Error(`Invalid elevator: ${JSON.stringify(elevator)}`);
+            }
+            price += calculateElevatorPrice(elevator.charge, elevator.floors);
+          }
+
+          return price;
+        }
+
         Alpine.data("calculator", () => ({
           elevators: [emptyElevator()],
           price: null,
@@ -1164,7 +1185,7 @@
 
           calculate() {
             console.log("Calculating price...");
-            this.price = Math.round(1000 + Math.random() * 9000);
+            this.price = calculatePrice(this.elevators);
           },
         }));
       </script>
