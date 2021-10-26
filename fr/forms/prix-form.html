@@ -478,7 +478,7 @@
         }
 
         .tooltip.calculator {
-          filter: drop-shadow(0px 1px 20px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.2));
         }
 
         /* IE11 fixes */
@@ -653,7 +653,7 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div class="elevator-input">
+                          <div x-if="!price" class="elevator-input">
                             <div class="field-calculator alternative">
                               <div class="field-label elevators">Nombre d’ascenseurs</div>
                               <div x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" x-on:update="elevatorCount = $event.detail" class="elevator-spinner">
@@ -672,7 +672,7 @@
                                       <a x-bind="trigger" href="#" class="w-inline-block"
                                         ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                       /></a>
-                                      <div x-bind="target" x-cloak="1" class="uncloak">
+                                      <div x-bind="target" x-cloak="1">
                                         <div class="tooltip calculator">
                                           <div>Information disponible dans la cabine de votre ascenseur.</div>
                                           <div class="tooltip-arrow"></div>
@@ -688,9 +688,9 @@
                                       <a x-bind="trigger" href="#" class="w-inline-block"
                                         ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                       /></a>
-                                      <div x-bind="target" x-cloak="1" class="uncloak">
+                                      <div x-bind="target" x-cloak="1">
                                         <div class="tooltip calculator">
-                                          <div>Comptez ici le les étages, mais également  parkings, sous-sols et caves.</div>
+                                          <div>Comptez ici les étages, mais également parkings, sous-sols et caves.</div>
                                           <div class="tooltip-arrow"></div>
                                         </div>
                                       </div>
@@ -710,7 +710,7 @@
                                         <a x-bind="trigger" href="#" class="w-inline-block"
                                           ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                         /></a>
-                                        <div x-bind="target" x-cloak="1" class="uncloak">
+                                        <div x-bind="target" x-cloak="1">
                                           <div class="tooltip calculator">
                                             <div>Information disponible dans la cabine de votre ascenseur.</div>
                                             <div class="tooltip-arrow"></div>
@@ -744,9 +744,9 @@
                                         <a x-bind="trigger" href="#" class="w-inline-block"
                                           ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                         /></a>
-                                        <div x-bind="target" x-cloak="1" class="uncloak">
+                                        <div x-bind="target" x-cloak="1">
                                           <div class="tooltip calculator">
-                                            <div>Comptez ici le les étages, mais également  parkings, sous-sols et caves.</div>
+                                            <div>Comptez ici le les étages, mais également parkings, sous-sols et caves.</div>
                                             <div class="tooltip-arrow"></div>
                                           </div>
                                         </div>
@@ -792,7 +792,7 @@
                         </div>
                       </div>
                       <div class="form-slide w-slide">
-                        <div x-cloak="1" class="form-slide-content calculate uncloak">
+                        <div class="form-slide-content calculate">
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
                           <div x-cloak="1" x-if="price" class="form-calculator-price-wrapper uncloak">
                             <h1 x-text="priceFormatted" class="no-margin">2 980€</h1>
@@ -866,6 +866,7 @@
                 <div class="success-message-calculator-container">
                   <h2>Merci !</h2>
                   <div>Votre proposition tarifaire vous a été envoyée par e-mail.</div>
+                  <div class="form-calculator-plane"></div>
                 </div>
               </div>
               <div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>

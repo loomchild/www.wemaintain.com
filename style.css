@@ -5774,7 +5774,7 @@ figcaption {
 }
 .success-message-calculator {
   position: relative;
-  padding: 120px 32px 140px;
+  padding: 56px 32px 76px;
   background-color: transparent;
   font-size: 21px;
   line-height: 30px;
@@ -5810,8 +5810,18 @@ figcaption {
   -ms-transform: translate(-4px, 0);
   transform: translate(-4px, 0);
 }
-.mask-2 {
-  overflow: visible;
+.form-calculator-plane {
+  position: absolute;
+  left: 50px;
+  top: auto;
+  right: auto;
+  bottom: -156px;
+  width: 250px;
+  height: 325px;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/6177e7e735a7c8cdbe85d220_Plane.png");
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -7013,6 +7023,9 @@ figcaption {
     width: 720px;
     max-width: 120%;
   }
+  .form-calculator-plane {
+    left: -24px;
+  }
 }
 @media screen and (max-width: 479px) {
   body {
@@ -7472,5 +7485,13 @@ figcaption {
     padding-bottom: 130px;
     font-size: 18px;
     line-height: 28px;
+  }
+  .form-calculator-plane {
+    left: 50px;
+    bottom: -120px;
+    height: 240px;
+  }
+  .image-406 {
+    height: 100%;
   }
 }
