@@ -5670,7 +5670,7 @@ figcaption {
 }
 .form-calculator-price-wrapper {
   margin-top: 8px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
   text-align: center;
 }
 .form-caluclator-price {
@@ -5755,6 +5755,7 @@ figcaption {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #252950;
 }
 .elevator-mobile-label {
   display: none;
@@ -5808,6 +5809,9 @@ figcaption {
   -webkit-transform: translate(-4px, 0);
   -ms-transform: translate(-4px, 0);
   transform: translate(-4px, 0);
+}
+.mask-2 {
+  overflow: visible;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -7443,9 +7447,9 @@ figcaption {
   .form-button-wrapper {
     margin-top: 32px;
   }
-  .form-calculator-price-wrapper.uncloak {
+  .form-calculator-price-wrapper {
     margin-top: 0;
-    margin-bottom: 48px;
+    margin-bottom: 38px;
   }
   .form-calculator-price-subtitle {
     font-size: 18px;
