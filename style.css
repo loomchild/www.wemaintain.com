@@ -7460,6 +7460,10 @@ figcaption {
   .form-button-wrapper {
     margin-top: 32px;
   }
+  .field-calculator-input,
+  .spinner-input {
+    font-size: 16px;
+  }
   .form-calculator-price-wrapper {
     margin-top: 0;
     margin-bottom: 38px;
