@@ -126,10 +126,10 @@
 
     <script>
       function trackSubmit() {
-        console.log("Submit");
+        console.log("SubmitN");
 
         // LinkedIn
-        window.lintrk("track", { conversion_id: 6207449 });
+        window.lintrk("track", { conversion_id: 5446292 });
       }
     </script>
   </head>
@@ -720,14 +720,15 @@
                                     </div>
                                   </div>
                                   <select
-                                    data-name="[elevators][1][charge]"
+                                    class="field-calculator-input w-select"
+                                    x-bind:data-name="`[elevators][${i}][charge]`"
                                     name="[elevators][1][charge]"
+                                    data-name="[elevators][1][charge]"
+                                    x-bind:name="`[elevators][${i}][charge]`"
+                                    x-on:change="elevators[i-1].charge = Number($event.target.value)"
+                                    id="field"
                                     required=""
                                     x-data="select"
-                                    x-bind:name="`[elevators][${i}][charge]`"
-                                    x-bind:data-name="`[elevators][${i}][charge]`"
-                                    x-on:change="elevators[i-1].charge = Number($event.target.value)"
-                                    class="field-calculator-input w-select"
                                   >
                                     <option value="">Faites un choix</option>
                                     <option value="1">Moins de 300 kg (1 à 4 pers.)</option>
@@ -830,7 +831,7 @@
                               </div>
                               <div class="field-calculator">
                                 <label for="syndic-2" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
-                                ><input type="text" maxlength="256" name="syndic" data-name="syndic" placeholder="Mon syndic bien aimé" id="syndic" class="field-calculator-input w-input" />
+                                ><input type="text" class="field-calculator-input w-input" maxlength="256" name="syndic" data-name="syndic" placeholder="Mon syndic bien aimé" id="syndic" />
                               </div>
                             </div>
                           </div>
