@@ -109,11 +109,22 @@
     </script>
 
     <script>
-      function trackSubmit() {
-        console.log("SubmitN");
+      function trackConversion(event) {
+        console.log(`Conversion ${event}`);
 
-        // LinkedIn
-        window.lintrk("track", { conversion_id: 5446292 });
+        switch (event) {
+          case "price-calculate":
+            window.lintrk("track", { conversion_id: 6424777 });
+            break;
+
+          case "price-submit":
+            window.lintrk("track", { conversion_id: 5446292 });
+            break;
+
+          default:
+            console.warn(`Unknown conversion ${event}`);
+            break;
+        }
       }
     </script>
   </head>
@@ -818,7 +829,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/js/webflow.9f94ba490.js" type="text/javascript"></script>
+    <script src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/js/webflow.35e7b7b24.js" type="text/javascript"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
     <script src="https://cdn.finsweet.com/files/cmslibrary-v1.8.js"></script>
 
