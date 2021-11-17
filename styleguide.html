@@ -186,6 +186,13 @@
           border-bottom-color: #252950 !important;
         }
 
+        /* Last top navbar link doesn't fit on small desktops */
+        @media screen and (min-width: 992px) and (max-width: 1139px) {
+          .navbar-links > :last-child {
+            display: none;
+          }
+        }
+
         /* Testimonial shift on large screens */
         @media screen and (min-width: 768px) {
           .testimonial-wrapper .w-col:nth-child(2n) {

@@ -2225,6 +2225,7 @@ figcaption {
 }
 .button-contained.important.navbar-button {
   min-width: 152px;
+  white-space: nowrap;
 }
 .button-contained.important.flat {
   border-radius: 0;

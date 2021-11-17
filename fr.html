@@ -202,6 +202,13 @@
           border-bottom-color: #252950 !important;
         }
 
+        /* Last top navbar link doesn't fit on small desktops */
+        @media screen and (min-width: 992px) and (max-width: 1139px) {
+          .navbar-links > :last-child {
+            display: none;
+          }
+        }
+
         /* Testimonial shift on large screens */
         @media screen and (min-width: 768px) {
           .testimonial-wrapper .w-col:nth-child(2n) {
@@ -557,6 +564,9 @@
               </div>
               <div class="navbar-links-wrapper">
                 <a href="/fr/a-propos" class="navbar-link w-inline-block"><div class="navbar-link-text">À propos</div></a>
+              </div>
+              <div class="navbar-links-wrapper">
+                <a href="/fr/blog" class="navbar-link w-inline-block"><div class="navbar-link-text">Blog</div></a>
               </div>
             </div>
             <div class="menu-separator"></div>
