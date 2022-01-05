@@ -5682,10 +5682,7 @@ figcaption {
   line-height: 30px;
 }
 .form-calculator-promo {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   margin-top: 32px;
   padding: 24px 32px;
   -webkit-box-align: center;
