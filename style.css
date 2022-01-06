@@ -2771,6 +2771,9 @@ figcaption {
 .header-subtitle.narrow {
   max-width: 600px;
 }
+.header-subtitle.narrow.white.lighter.narrower {
+  max-width: 490px;
+}
 .header-subtitle.semi-narrow {
   max-width: 800px;
 }
