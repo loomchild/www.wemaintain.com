@@ -121,6 +121,11 @@
       function trackConversion(event) {
         console.log(`Conversion ${event}`);
 
+        if (!window.lintrk) {
+          console.log("Tracking disabled/blocked");
+          return;
+        }
+
         switch (event) {
           case "price-calculate":
             window.lintrk("track", { conversion_id: 6424777 });
@@ -688,12 +693,17 @@
               >
             </div>
             <div role="listitem" class="post-card-wrapper w-dyn-item">
-              <a href="/blog-posts/entretien-avec-patrick-rapon-premier-technicien-ascenseur-partenaire-de-wemaintain-a-paris" class="post-card w-inline-block"
+              <a href="/blog-posts/entretien-avec-khong-kun-tak-le-premier-technicien-de-wemaintain-a-singapour" class="post-card w-inline-block"
                 ><div class="post-thumbnail-wrapper">
                   <img
-                    src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/6172aadce0f39e29a64452d3_Screen%20Shot%202021-10-21%20at%2014.48.27.png"
+                    src="https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/6172b6ab125a386a94129555_Screen%20Shot%202021-10-21%20at%2014.44.29.png"
                     loading="lazy"
                     alt="Post thumbnail"
+                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 42vw, (max-width: 1439px) 26vw, 368px"
+                    srcset="
+                      https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/6172b6ab125a386a94129555_Screen%20Shot%202021-10-21%20at%2014.44.29-p-500.png 500w,
+                      https://uploads-ssl.webflow.com/5f2d64e630a1400bcecb376f/6172b6ab125a386a94129555_Screen%20Shot%202021-10-21%20at%2014.44.29.png       626w
+                    "
                     class="post-image"
                   />
                   <div class="blog-thumbnail-overlay">
@@ -715,8 +725,8 @@
                       <div style="background-color: hsla(235.6521739130435, 46.94%, 28.82%, 1)" class="post-category-background"></div>
                       <div style="color: hsla(235.6521739130435, 46.94%, 28.82%, 1)" class="post-category-name">Équipe</div>
                     </div>
-                    <h4 class="post-title">Entretien avec Patrick Rapon, premier technicien ascenseur partenaire de WeMaintain, à Paris</h4>
-                    <div class="post-intro">Patrick a été le premier technicien partenaire WeMaintain. Il nous partage son expérience depuis ses débuts avec l&#x27;équipe.</div>
+                    <h4 class="post-title">Entretien avec Khong Kun Tak, premier technicien de WeMaintain à Singapour</h4>
+                    <div class="post-intro">Echanges avec Khong Kun Tak : retour sur ses 6 premiers mois chez WeMaintain.</div>
                   </div>
                   <div class="post-author">
                     <img
@@ -1106,7 +1116,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/js/webflow.4e410a010.js" type="text/javascript"></script>
+    <script src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/js/webflow.0cd22924c.js" type="text/javascript"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
     <script src="https://cdn.finsweet.com/files/cmslibrary-v1.8.js"></script>
 
