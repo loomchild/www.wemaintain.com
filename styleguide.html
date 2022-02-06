@@ -112,31 +112,6 @@
         a.appendChild(r);
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
-
-    <script>
-      function trackConversion(event) {
-        console.log(`Conversion ${event}`);
-
-        if (!window.lintrk) {
-          console.log("Tracking disabled/blocked");
-          return;
-        }
-
-        switch (event) {
-          case "price-calculate":
-            window.lintrk("track", { conversion_id: 6424777 });
-            break;
-
-          case "price-submit":
-            window.lintrk("track", { conversion_id: 5446292 });
-            break;
-
-          default:
-            console.warn(`Unknown conversion ${event}`);
-            break;
-        }
-      }
-    </script>
   </head>
   <body>
     <div class="w-embed">
@@ -975,7 +950,7 @@
       function loadMore(sel) {
         const els = document.querySelectorAll(sel);
         if (els.length !== 1) {
-          console.warn(`Selector not found or not unique: ${sel}`);
+          console.warn("Selector not found or not unique: " + sel);
           return;
         }
 
@@ -998,6 +973,29 @@
             effects: "fade",
           },
         });
+      }
+
+      function trackConversion(event) {
+        console.log("Conversion " + event);
+
+        if (!window.lintrk) {
+          console.log("Tracking disabled/blocked");
+          return;
+        }
+
+        switch (event) {
+          case "price-calculate":
+            window.lintrk("track", { conversion_id: 6424777 });
+            break;
+
+          case "price-submit":
+            window.lintrk("track", { conversion_id: 5446292 });
+            break;
+
+          default:
+            console.warn("Unknown conversion: " + event);
+            break;
+        }
       }
     </script>
   </body>
