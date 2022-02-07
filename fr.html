@@ -1034,7 +1034,10 @@
       }
 
       /* Notification bar */
-      function showMessage({ message, duration = 5000 } = {}) {
+      function showMessage(options) {
+        options = options || {};
+        const message = options.message;
+        const duration = options.duration || 5000;
         const notification = document.querySelector(".notification");
         if (notification) {
           const messageElement = notification.querySelector(".message");
@@ -1055,7 +1058,7 @@
         formWithMessage.addEventListener("submit", function (event) {
           setTimeout(function () {
             // TODO: connect with Segment success
-            showMessage({ message });
+            showMessage({ message: message });
 
             // TODO: make generic
             formWithMessage.email.value = "";
