@@ -786,7 +786,11 @@
                             <label for="email-2" class="field-label alternative">Votre e-mail</label
                             ><input type="email" class="field-calculator-input w-input" maxlength="256" name="email" data-name="email" placeholder="camille@dupont.fr" id="email" required="" />
                           </div>
-                          <div class="hidden-fields w-embed"><input type="hidden" name="price" x-bind:value="price" /> <input type="hidden" name="elevatorcount" x-bind:value="elevatorCount" /></div>
+                          <div class="hidden-fields w-embed">
+                            <input type="hidden" name="price" x-bind:value="price" />
+                            <input type="hidden" name="elevatorcount" x-bind:value="elevatorCount" />
+                            <input type="hidden" name="elevators" x-bind:value="JSON.stringify(elevators)" />
+                          </div>
                           <div class="form-button-wrapper">
                             <a id="calculate-price" x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()" href="#" class="button-contained important w-button">Calculer le prix</a>
                           </div>
