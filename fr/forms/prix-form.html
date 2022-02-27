@@ -659,7 +659,7 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div x-if="!price" class="elevator-input">
+                          <div class="elevator-input">
                             <div class="field-calculator alternative">
                               <div class="field-label elevators">Nombre d’ascenseurs</div>
                               <div x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" x-on:update="elevatorCount = $event.detail" class="elevator-spinner">
@@ -782,6 +782,7 @@
                               </div>
                             </div>
                           </div>
+                          <div class="elevator-input-spacer"></div>
                           <div class="field-calculator alternative">
                             <label for="email-2" class="field-label alternative">Votre e-mail</label
                             ><input type="email" class="field-calculator-input w-input" maxlength="256" name="email" data-name="email" placeholder="camille@dupont.fr" id="email" required="" />
@@ -799,7 +800,7 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content calculate">
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
-                          <div x-cloak="1" x-if="price" class="form-calculator-price-wrapper uncloak">
+                          <div class="form-calculator-price-wrapper">
                             <h1 x-text="priceFormatted" class="no-margin">2 980€</h1>
                             <div class="form-calculator-price-subtitle">prix HT / an pour vos <span x-text="elevatorCount">X</span> appareils</div>
                             <div class="form-calculator-promo">
@@ -1058,12 +1059,16 @@
       <script src="https://unpkg.com/libphonenumber-js@1.7.58/bundle/libphonenumber-max.js"></script>
 
       <script>
-        Alpine.data("select", () => ({
+        Alpine.data("select", ({ value = null } = {}) => ({
+          value,
+
           init() {
             const placeholder = this.$el.firstChild;
             placeholder.setAttribute("selected", "");
             placeholder.setAttribute("disabled", "");
             placeholder.setAttribute("hidden", "");
+
+            this.$watch("value", (value) => this.$dispatch("update", value));
           },
         }));
 
@@ -1154,15 +1159,11 @@
         }
 
         function calculatePrice(elevators) {
-          if (elevators.lenght === 0) {
-            throw new Error("No elevators");
-          }
-
           let price = 0;
 
           for (let elevator of elevators) {
             if (!elevator || elevator.charge == null || elevator.charge < 1 || elevator.floors == null || elevator.floors < 1 || elevator.floors > 99) {
-              throw new Error(`Invalid elevator: ${JSON.stringify(elevator)}`);
+              continue;
             }
             price += calculateElevatorPrice(elevator.charge, elevator.floors);
           }
@@ -1172,7 +1173,16 @@
 
         Alpine.data("calculator", ({ add = emptyElevator } = {}) => ({
           elevators: [add()],
-          price: null,
+          price: 0,
+
+          init() {
+            this.updatePrice();
+            this.$watch("elevators", () => this.updatePrice());
+          },
+
+          updatePrice() {
+            this.price = calculatePrice(this.elevators);
+          },
 
           get elevatorCount() {
             return this.elevators.length;
@@ -1197,16 +1207,10 @@
             return new Intl.NumberFormat("fr-FR").format(this.price) + "€";
           },
 
-          calculate() {
-            console.log("Calculating price...");
-            this.price = calculatePrice(this.elevators);
-          },
-
           nextStep() {
             const currentSlide = this.$el.closest(".w-slide");
             const allFieldsValid = [...currentSlide.querySelectorAll("input,select")].every((i) => i.reportValidity());
             if (allFieldsValid) {
-              this.calculate();
               this.nextSlide();
               scrollTo({ top: 340, left: 0, behavior: "smooth" });
             }

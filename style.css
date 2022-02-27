@@ -5614,7 +5614,7 @@ figcaption {
 }
 .elevator-table {
   margin-top: 32px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   border: 1px solid #d8d8ef;
   border-radius: 8px;
   font-size: 14px;
@@ -5821,6 +5821,50 @@ figcaption {
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.form-calculator-simple-price-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 12px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.form-calculator-simple-price-value-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.form-calculator-simple-price {
+  margin-top: 0;
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+.form-calculator-simple-price-label {
+  color: #252950;
+  font-size: 18px;
+  line-height: 28px;
+}
+.price-calculator-simple-note {
+  margin-bottom: 20px;
+  color: #999;
+  font-size: 14px;
+  line-height: 21px;
+}
+.elevator-input-spacer {
+  height: 30px;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -7496,5 +7540,9 @@ figcaption {
   }
   .image-406 {
     height: 100%;
+  }
+  .form-calculator-simple-price-wrapper {
+    margin-top: 0;
+    margin-bottom: 38px;
   }
 }
