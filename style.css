@@ -5858,6 +5858,7 @@ figcaption {
   line-height: 28px;
 }
 .price-calculator-simple-note {
+  max-width: 360px;
   margin-bottom: 20px;
   color: #999;
   font-size: 14px;
