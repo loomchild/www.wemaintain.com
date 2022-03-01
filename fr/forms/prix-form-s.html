@@ -727,6 +727,7 @@
                                   </div>
                                   <select
                                     class="field-calculator-input w-select"
+                                    x-bind:id="$id(&#x27;charge&#x27;)"
                                     x-bind:data-name="`[elevators][${i}][charge]`"
                                     name="[elevators][1][charge]"
                                     data-name="[elevators][1][charge]"
@@ -766,6 +767,7 @@
                                     ><input
                                       type="number"
                                       class="spinner-input w-input"
+                                      x-bind:id="$id(&#x27;floors&#x27;)"
                                       max="99"
                                       x-bind:data-name="`[elevators][${i}][floors]`"
                                       maxlength="2"
@@ -775,7 +777,7 @@
                                       min="1"
                                       x-bind:name="`[elevators][${i}][floors]`"
                                       placeholder="--"
-                                      id="[elevators][1][floors]"
+                                      id="field"
                                       required=""
                                     /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
                                   </div>
@@ -794,7 +796,8 @@
                           <div class="hidden-fields w-embed">
                             <input type="hidden" name="price" x-bind:value="price" />
                             <input type="hidden" name="elevatorcount" x-bind:value="elevatorCount" />
-                            <input type="hidden" name="elevators" x-bind:value="JSON.stringify(elevators)" />
+                            <input type="hidden" name="elevators" x-bind:value="elevatorDetails" />
+                            <input type="hidden" name="simple" value="true" />
                           </div>
                           <div class="form-button-wrapper">
                             <a id="calculate-price" x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()" href="#" class="button-contained important w-button"
@@ -834,14 +837,14 @@
                                 />
                               </div>
                               <div class="field-calculator">
-                                <label for="syndic" class="field-label">Email</label
+                                <label for="email" class="field-label">Email</label
                                 ><input type="email" class="field-calculator-input w-input" maxlength="256" name="email" data-name="email" placeholder="camille@dupont.fr" id="email" required="" />
                               </div>
                             </div>
                           </div>
                           <div class="field-calculator">
-                            <label for="syndic-2" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
-                            ><input type="text" class="field-calculator-input w-input" maxlength="256" name="syndic-2" data-name="Syndic 2" placeholder="Mon syndic bien aimé" id="syndic-2" />
+                            <label for="syndic" class="field-label">Nom du syndic <span class="field-calculator-note">(facultatif)</span></label
+                            ><input type="text" class="field-calculator-input w-input" maxlength="256" name="syndic" data-name="syndic" placeholder="Mon syndic bien aimé" id="syndic" />
                           </div>
                           <label class="w-checkbox checkbox-field calculator"
                             ><input type="checkbox" id="toc" name="toc" data-name="toc" required="" class="w-checkbox-input checkbox" /><span for="toc" class="checkbox-label w-form-label"
@@ -1166,6 +1169,10 @@
           return price;
         }
 
+        function chargeToLabel(charge) {
+          return charge;
+        }
+
         Alpine.data("calculator", ({ add = emptyElevator } = {}) => ({
           elevators: [add()],
           price: 0,
@@ -1181,6 +1188,11 @@
 
           get elevatorCount() {
             return this.elevators.length;
+          },
+
+          get elevatorDetails() {
+            const elevatorLabels = this.elevators.map((e) => ({ floors: e.floors, charge: chargeToLabel(e.charge) }));
+            return JSON.stringify(elevatorLabels);
           },
 
           set elevatorCount(elevatorCount) {

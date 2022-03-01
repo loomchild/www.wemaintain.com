@@ -774,7 +774,7 @@
                                       min="1"
                                       x-bind:name="`[elevators][${i}][floors]`"
                                       placeholder="--"
-                                      id="[elevators][1][floors]"
+                                      id="field"
                                       required=""
                                     /><a x-bind="increase" href="#" class="spinner-button increase w-button"></a>
                                   </div>
@@ -790,7 +790,7 @@
                           <div class="hidden-fields w-embed">
                             <input type="hidden" name="price" x-bind:value="price" />
                             <input type="hidden" name="elevatorcount" x-bind:value="elevatorCount" />
-                            <input type="hidden" name="elevators" x-bind:value="JSON.stringify(elevators)" />
+                            <input type="hidden" name="elevators" x-bind:value="elevatorDetails" />
                           </div>
                           <div class="form-button-wrapper">
                             <a id="calculate-price" x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()" href="#" class="button-contained important w-button">Calculer le prix</a>
@@ -1171,6 +1171,10 @@
           return price;
         }
 
+        function chargeToLabel(charge) {
+          return charge;
+        }
+
         Alpine.data("calculator", ({ add = emptyElevator } = {}) => ({
           elevators: [add()],
           price: 0,
@@ -1186,6 +1190,11 @@
 
           get elevatorCount() {
             return this.elevators.length;
+          },
+
+          get elevatorDetails() {
+            const elevatorLabels = this.elevators.map((e) => ({ floors: e.floors, charge: chargeToLabel(e.charge) }));
+            return JSON.stringify(elevatorLabels);
           },
 
           set elevatorCount(elevatorCount) {
