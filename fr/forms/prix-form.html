@@ -1171,17 +1171,29 @@
           return price;
         }
 
-        function chargeToLabel(charge) {
-          return charge;
-        }
-
         Alpine.data("calculator", ({ add = emptyElevator } = {}) => ({
           elevators: [add()],
           price: 0,
+          chargeLabels: {},
 
           init() {
             this.updatePrice();
             this.$watch("elevators", () => this.updatePrice());
+            this.$nextTick(() => {
+              this.initChargeLabels();
+            });
+          },
+
+          initChargeLabels() {
+            const select = document.querySelector(".elevator-charge-wrapper select");
+            const options = select.querySelectorAll("option");
+            for (const option of options) {
+              const value = option.value;
+              if (value) {
+                const label = option.textContent;
+                this.chargeLabels[value] = label;
+              }
+            }
           },
 
           updatePrice() {
@@ -1193,8 +1205,12 @@
           },
 
           get elevatorDetails() {
-            const elevatorLabels = this.elevators.map((e) => ({ floors: e.floors, charge: chargeToLabel(e.charge) }));
+            const elevatorLabels = this.elevators.map((e) => ({ floors: e.floors, charge: e.charge, chargeLabel: this.chargeToLabel(e.charge) }));
             return JSON.stringify(elevatorLabels);
+          },
+
+          chargeToLabel(charge) {
+            return this.chargeLabels[charge] || charge;
           },
 
           set elevatorCount(elevatorCount) {
