@@ -630,7 +630,7 @@
       <div class="container w-container">
         <div class="sprite-wrapper calculator-dots"><div class="form-calculator-dots"></div></div>
         <div x-data="calculator({add: popularElevator})" class="form-calculator-wrapper">
-          <div x-data="wizard" x-on:update:slide="onUpdateStep" class="card">
+          <div x-data="wizard" x-on:update:step="onUpdateStep" class="card">
             <div class="form-block-calculator w-form">
               <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form" method="get" data-track-form="Calculator FR">
                 <input type="submit" value="Submit" data-wait="Please wait..." x-bind:disabled="&#x27;&#x27;" x-data="{}" class="prevent-enter-submit w-button" />
@@ -1224,12 +1224,13 @@
             return new Intl.NumberFormat("fr-FR").format(this.price) + "€";
           },
 
-          onUpdateStep(event) {
-            console.log(event);
-            setTimeout(() => {
-              this.hideElevatorInput = true;
-            }, 500);
-            scrollTo({ top: 340, left: 0, behavior: "smooth" });
+          onUpdateStep() {
+            if (this.step === 1) {
+              setTimeout(() => {
+                this.hideElevatorInput = true;
+              }, 400);
+              scrollTo({ top: 340, left: 0, behavior: "smooth" });
+            }
           },
         }));
       </script>

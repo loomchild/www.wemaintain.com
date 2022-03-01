@@ -637,7 +637,7 @@
       <div class="container w-container">
         <div class="sprite-wrapper calculator-dots"><div class="form-calculator-dots"></div></div>
         <div x-data="calculator" class="form-calculator-wrapper">
-          <div class="card">
+          <div x-data="wizard" x-on:update:step="onUpdateStep" class="card">
             <div class="form-block-calculator w-form">
               <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form" method="get" data-track-form="Calculator FR">
                 <input type="submit" value="Submit" data-wait="Please wait..." x-bind:disabled="&#x27;&#x27;" x-data="{}" class="prevent-enter-submit w-button" />
@@ -659,7 +659,7 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content">
                           <div class="form-calculator-title"><h4>Votre immeuble</h4></div>
-                          <div x-if="slide === 0" class="elevator-input">
+                          <div x-if="!hideElevatorInput" class="elevator-input">
                             <div class="field-calculator alternative">
                               <div class="field-label elevators">Nombre d’ascenseurs</div>
                               <div x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" x-on:update="elevatorCount = $event.detail" class="elevator-spinner">
@@ -1233,12 +1233,13 @@
             return new Intl.NumberFormat("fr-FR").format(this.price) + "€";
           },
 
-          onUpdateStep(event) {
-            console.log(event);
-            setTimeout(() => {
-              this.hideElevatorInput = true;
-            }, 500);
-            scrollTo({ top: 340, left: 0, behavior: "smooth" });
+          onUpdateStep() {
+            if (this.step === 1) {
+              setTimeout(() => {
+                this.hideElevatorInput = true;
+              }, 400);
+              scrollTo({ top: 340, left: 0, behavior: "smooth" });
+            }
           },
         }));
       </script>
