@@ -1175,6 +1175,7 @@
           elevators: [add()],
           price: 0,
           chargeLabels: {},
+          hideElevatorInput: false,
 
           init() {
             this.updatePrice();
@@ -1232,13 +1233,12 @@
             return new Intl.NumberFormat("fr-FR").format(this.price) + "€";
           },
 
-          nextStep() {
-            const currentSlide = this.$el.closest(".w-slide");
-            const allFieldsValid = [...currentSlide.querySelectorAll("input,select")].every((i) => i.reportValidity());
-            if (allFieldsValid) {
-              this.nextSlide();
-              scrollTo({ top: 340, left: 0, behavior: "smooth" });
-            }
+          onUpdateStep(event) {
+            console.log(event);
+            setTimeout(() => {
+              this.hideElevatorInput = true;
+            }, 500);
+            scrollTo({ top: 340, left: 0, behavior: "smooth" });
           },
         }));
       </script>
