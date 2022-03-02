@@ -800,7 +800,7 @@
                       <div class="form-slide w-slide">
                         <div class="form-slide-content calculate">
                           <div class="form-calculator-title"><h4>Prix de votre contrat</h4></div>
-                          <div class="form-calculator-price-wrapper">
+                          <div x-if="step &gt; 0" class="form-calculator-price-wrapper">
                             <h1 x-text="priceFormatted" class="no-margin">2 980€</h1>
                             <div class="form-calculator-price-subtitle">prix HT / an pour vos <span x-text="elevatorCount">X</span> appareils</div>
                             <div class="form-calculator-promo">
