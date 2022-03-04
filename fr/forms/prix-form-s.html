@@ -793,7 +793,12 @@
                             <input type="hidden" name="simple" value="true" />
                           </div>
                           <div class="form-button-wrapper">
-                            <a id="calculate-price" x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()" href="#" class="button-contained important w-button"
+                            <a
+                              id="calculate-price"
+                              x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()"
+                              x-bind:class="&#x27;next-step&#x27;"
+                              href="#"
+                              class="button-contained important w-button"
                               >Recevoir ma proposition tarifaire</a
                             >
                           </div>

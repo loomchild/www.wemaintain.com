@@ -793,7 +793,14 @@
                             <input type="hidden" name="elevators" x-bind:value="elevatorDetails" />
                           </div>
                           <div class="form-button-wrapper">
-                            <a id="calculate-price" x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()" href="#" class="button-contained important w-button">Calculer le prix</a>
+                            <a
+                              id="calculate-price"
+                              x-on:click="trackConversion(&#x27;price-calculate&#x27;); nextStep()"
+                              x-bind:class="&#x27;next-step&#x27;"
+                              href="#"
+                              class="button-contained important w-button"
+                              >Calculer le prix</a
+                            >
                           </div>
                         </div>
                       </div>
