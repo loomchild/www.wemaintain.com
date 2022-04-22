@@ -1800,6 +1800,12 @@ textarea.w-select {
 .w-dyn-hide {
   display: none !important;
 }
+.wf-layout-layout {
+  display: grid !important;
+}
+.wf-layout-cell {
+  display: flex !important;
+}
 .w-pagination-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
