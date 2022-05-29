@@ -2794,6 +2794,9 @@ figcaption {
 .header-title {
   margin-top: 16px;
 }
+.header-title.white.smaller {
+  max-width: 98%;
+}
 .header-title.narrow {
   max-width: 600px;
 }
@@ -2938,6 +2941,9 @@ figcaption {
 .field {
   width: 100%;
   margin-bottom: 25px;
+}
+.field.last {
+  margin-bottom: 40px;
 }
 .text-field {
   height: 48px;
@@ -5907,6 +5913,91 @@ figcaption {
   border: 100px solid hsla(0, 0%, 100%, 0.03);
   border-radius: 50%;
 }
+.form-guide-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -20;
+  background-image: linear-gradient(274deg, #3f3895 50%, #333e8e 100%, #272c6c);
+}
+.guide-form-header {
+  max-width: 940px;
+  margin-right: auto;
+  margin-bottom: 100px;
+  margin-left: auto;
+  text-align: center;
+}
+.guiide-form-wrapper {
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
+.form-guide-sprite-folder {
+  position: absolute;
+  left: 48%;
+  top: 176px;
+}
+.download-guide-form {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  padding: 64px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.download-guide-form.resi {
+  min-height: 650px;
+}
+.download-guide-form-disclaimer {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+.download-guide-form-columns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 600px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.download-guide-form-column-right {
+  width: 40%;
+}
+.download-guide-form-column-left {
+  padding: 64px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.download-guide-form-checklist ol {
+  margin-top: 32px;
+  margin-bottom: -16px;
+  padding-left: 24px;
+}
+.download-guide-form-checklist li {
+  margin-bottom: 16px;
+  padding-left: 12px;
+}
+.download-guide-form-column-separator {
+  width: 1px;
+  height: 100%;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;
@@ -7127,6 +7218,15 @@ figcaption {
   .form-sprite-circle {
     display: none;
   }
+  .form-guide-background {
+    background-position: -400px 50%, 0 0;
+    background-size: auto 1150px, auto;
+  }
+  .download-guide-form {
+    min-height: 570px;
+    margin-top: -166px;
+    padding: 32px;
+  }
 }
 @media screen and (max-width: 479px) {
   body {
@@ -7603,7 +7703,11 @@ figcaption {
     margin-top: 0;
     margin-bottom: 38px;
   }
-  .form-calculator-background-simple {
+  .form-calculator-background-simple,
+  .form-guide-background {
     background-position: -600px 50%, 0 0;
+  }
+  .download-guide-form {
+    min-height: 440px;
   }
 }
