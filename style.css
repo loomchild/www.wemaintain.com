@@ -5969,7 +5969,6 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 600px;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -5997,6 +5996,28 @@ figcaption {
 .download-guide-form-column-separator {
   width: 1px;
   height: 100%;
+}
+.download-guide-form-separator {
+  width: 1px;
+  height: 472px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.download-guide-form-success-header {
+  position: relative;
+}
+.download-guide-form-success-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/5f4a8ae62b080e0e97b725e5_sent.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
