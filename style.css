@@ -3004,6 +3004,7 @@ figcaption {
   margin-bottom: 40px;
 }
 .flex-columns.header,
+.flex-columns.header-download-guide,
 .flex-columns.header-home {
   height: 720px;
   -webkit-box-align: center;
@@ -5937,6 +5938,8 @@ figcaption {
   position: absolute;
   left: 48%;
   top: 176px;
+  width: 763px;
+  height: 511px;
 }
 .download-guide-form {
   position: relative;
@@ -6029,6 +6032,20 @@ figcaption {
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.download-sprinkles-top {
+  position: absolute;
+  left: 8%;
+  top: -4%;
+  right: auto;
+  bottom: auto;
+}
+.download-sprinkles-bottom {
+  position: absolute;
+  left: 9%;
+  top: auto;
+  right: auto;
+  bottom: 5%;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -6504,6 +6521,9 @@ figcaption {
     padding-bottom: 0;
     background-color: #d8d8ef;
   }
+  .form-guide-sprite-folder {
+    left: 43%;
+  }
   .download-guide-form-columns {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6523,6 +6543,17 @@ figcaption {
     padding-left: 64px;
     background-clip: content-box;
     -webkit-text-fill-color: inherit;
+  }
+  .form-download-guide-plane {
+    top: 5%;
+  }
+  .download-sprinkles-top {
+    left: 9%;
+    top: -3%;
+  }
+  .download-sprinkles-bottom {
+    left: 10%;
+    bottom: 6%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -6705,8 +6736,8 @@ figcaption {
     width: 100%;
   }
   .success-message {
-    padding-right: 66px;
-    padding-left: 66px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
   .form-block {
     min-height: 570px;
@@ -6745,6 +6776,15 @@ figcaption {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+  }
+  .flex-columns.header-download-guide {
+    height: auto;
+    margin-top: 140px;
+    margin-bottom: 500px;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
   .clients-title {
     margin-bottom: 32px;
@@ -7274,6 +7314,13 @@ figcaption {
     background-position: -400px 50%, 0 0;
     background-size: auto 1150px, auto;
   }
+  .form-guide-sprite-folder {
+    left: 0;
+    top: auto;
+    bottom: 64px;
+    width: 560px;
+    height: auto;
+  }
   .download-guide-form,
   .download-guide-form-column-left {
     padding: 32px;
@@ -7283,7 +7330,16 @@ figcaption {
     padding-left: 32px;
   }
   .form-download-guide-plane {
-    left: -24px;
+    left: 20px;
+    top: 22%;
+    width: 200px;
+    height: 250px;
+  }
+  .download-sprinkles-top {
+    width: 60px;
+  }
+  .download-sprinkles-bottom {
+    width: 26px;
   }
 }
 @media screen and (max-width: 479px) {
@@ -7750,8 +7806,8 @@ figcaption {
     line-height: 28px;
   }
   .form-calculator-plane {
-    left: 50px;
-    bottom: -120px;
+    left: -20px;
+    bottom: -100px;
     height: 240px;
   }
   .image-406 {
@@ -7765,12 +7821,13 @@ figcaption {
   .form-guide-background {
     background-position: -600px 50%, 0 0;
   }
-  .download-guide-form {
-    min-height: 440px;
+  .form-guide-sprite-folder {
+    left: -10%;
   }
   .form-download-guide-plane {
-    left: 50px;
-    bottom: -120px;
+    left: 10px;
+    top: 30%;
+    bottom: 0;
     height: 240px;
   }
 }
