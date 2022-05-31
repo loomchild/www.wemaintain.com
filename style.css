@@ -6019,6 +6019,17 @@ figcaption {
   background-size: contain;
   background-repeat: no-repeat;
 }
+.form-download-guide-plane {
+  position: absolute;
+  left: -30px;
+  top: 15%;
+  width: 250px;
+  height: 325px;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/6177e7e735a7c8cdbe85d220_Plane.png");
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;
@@ -6492,6 +6503,26 @@ figcaption {
     padding-right: 0;
     padding-bottom: 0;
     background-color: #d8d8ef;
+  }
+  .download-guide-form-columns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .download-guide-form-column-right {
+    width: auto;
+  }
+  .download-guide-form-separator {
+    width: 100%;
+    height: 1px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 64px;
+    padding-left: 64px;
+    background-clip: content-box;
+    -webkit-text-fill-color: inherit;
   }
 }
 @media screen and (max-width: 767px) {
@@ -7243,10 +7274,16 @@ figcaption {
     background-position: -400px 50%, 0 0;
     background-size: auto 1150px, auto;
   }
-  .download-guide-form {
-    min-height: 570px;
-    margin-top: -166px;
+  .download-guide-form,
+  .download-guide-form-column-left {
     padding: 32px;
+  }
+  .download-guide-form-separator {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  .form-download-guide-plane {
+    left: -24px;
   }
 }
 @media screen and (max-width: 479px) {
@@ -7730,5 +7767,10 @@ figcaption {
   }
   .download-guide-form {
     min-height: 440px;
+  }
+  .form-download-guide-plane {
+    left: 50px;
+    bottom: -120px;
+    height: 240px;
   }
 }
