@@ -5967,6 +5967,9 @@ figcaption {
   margin-top: 32px;
   margin-bottom: 0;
 }
+.download-guide-form-disclaimer.caption {
+  color: #999;
+}
 .download-guide-form-columns {
   display: -webkit-box;
   display: -webkit-flex;
