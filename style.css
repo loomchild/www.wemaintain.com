@@ -5077,7 +5077,6 @@ figcaption {
   float: right;
 }
 .phone-link-commercial {
-  display: none;
   padding: 18px 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -6111,9 +6110,6 @@ figcaption {
     background-position: 185px 100%, 0 0;
     background-size: 958px, auto;
     background-repeat: no-repeat, repeat;
-  }
-  .phone-link-commercial {
-    display: none;
   }
   .columns,
   .columns-2 {
