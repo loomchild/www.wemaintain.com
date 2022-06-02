@@ -6064,6 +6064,91 @@ figcaption {
 .download-guide-links-text h5 {
   color: #6d709c;
 }
+.download-guide-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 440px;
+  height: 120px;
+  padding: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #272c6c;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.download-guide-button:hover {
+  background-color: #fbfbfb;
+}
+.download-guide-button-image {
+  width: 120px;
+  height: 120px;
+}
+.download-guide-button-text {
+  padding-right: 20px;
+  padding-left: 20px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.download-guide-icon {
+  margin-right: 34px;
+  margin-left: 14px;
+}
+.download-guide-buttons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+}
+.download-guide-radial-gradient {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1300px;
+  background-image: radial-gradient(
+    circle farthest-corner at 50% 50%,
+    #d3d3eb,
+    rgba(216, 216, 239, 0) 45%
+  );
+  opacity: 0.3;
+}
+.download-guide-circle {
+  position: absolute;
+  left: auto;
+  top: 400px;
+  right: 0;
+  bottom: 0;
+  width: 1000px;
+  height: 1000px;
+  background-image: url("https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/6298e3426751d76e1f4bf3ab_Ellipse%202(2)(1).png");
+  background-position: 100% 50%;
+  background-size: 590px;
+  background-repeat: no-repeat;
+}
 @media screen and (min-width: 1440px) {
   .navbar {
     padding-right: 80px;
@@ -6568,6 +6653,10 @@ figcaption {
   .download-sprinkles-bottom {
     left: 10%;
     bottom: 6%;
+  }
+  .download-guide-icon {
+    margin-right: 20px;
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 767px) {
@@ -7367,6 +7456,17 @@ figcaption {
   .download-sprinkles-bottom {
     width: 26px;
   }
+  .download-guide-button {
+    width: 100%;
+  }
+  .download-guide-icon {
+    margin-right: 34px;
+    margin-left: 14px;
+  }
+  .download-guide-buttons {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+  }
 }
 @media screen and (max-width: 479px) {
   body {
@@ -7855,5 +7955,26 @@ figcaption {
     top: 30%;
     bottom: 0;
     height: 240px;
+  }
+  .download-guide-button {
+    height: 88px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .download-guide-button-image {
+    width: 88px;
+    height: 88px;
+  }
+  .download-guide-button-text {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .download-guide-icon {
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  .download-guide-buttons {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
   }
 }
