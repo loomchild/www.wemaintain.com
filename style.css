@@ -3012,6 +3012,18 @@ figcaption {
   -ms-flex-align: center;
   align-items: center;
 }
+.flex-columns.download-guide {
+  margin-top: 140px;
+  margin-bottom: 140px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flex-columns.download-guide.history-columns {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
 .white {
   color: #fff;
 }
@@ -5931,7 +5943,7 @@ figcaption {
 }
 .guiide-form-wrapper {
   margin-top: 120px;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
 }
 .form-guide-sprite-folder {
   position: absolute;
@@ -6048,6 +6060,9 @@ figcaption {
   top: auto;
   right: auto;
   bottom: 5%;
+}
+.download-guide-links-text h5 {
+  color: #6d709c;
 }
 @media screen and (min-width: 1440px) {
   .navbar {
@@ -6784,6 +6799,18 @@ figcaption {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
+  }
+  .flex-columns.download-guide {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .flex-columns.download-guide.history-columns {
+    margin-top: 44px;
+    margin-bottom: 64px;
   }
   .clients-title {
     margin-bottom: 32px;
