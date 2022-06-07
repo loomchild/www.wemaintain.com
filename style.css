@@ -7583,6 +7583,9 @@ figcaption {
   .form-block {
     min-height: 440px;
   }
+  .text-field {
+    font-size: 16px;
+  }
   .flex-columns.download-guide {
     margin-top: 40px;
     margin-bottom: 60px;
