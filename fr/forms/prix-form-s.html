@@ -656,10 +656,10 @@
       <div class="container w-container">
         <div class="sprite-wrapper calculator-dots"><div class="form-calculator-dots"></div></div>
         <div x-data="calculator({add: popularElevator})" class="form-calculator-wrapper">
-          <div x-data="wizard" x-on:update:step="onUpdateStep" class="card">
+          <div x-on:update:step="onUpdateStep" x-data="wizard" class="card">
             <div class="form-block-calculator w-form">
               <form id="wf-form-Calculator-Form" name="wf-form-Calculator-Form" data-name="Calculator Form" method="get" data-track-form="Calculator FR">
-                <input type="submit" value="Submit" data-wait="Please wait..." x-bind:disabled="&#x27;&#x27;" x-data="{}" class="prevent-enter-submit w-button" />
+                <input type="submit" value="Submit" data-wait="Please wait..." x-data="{}" x-bind:disabled="&#x27;&#x27;" class="prevent-enter-submit w-button" />
                 <div x-data="slider">
                   <div
                     data-delay="4000"
@@ -681,7 +681,7 @@
                           <div x-if="!hideElevatorInput" class="elevator-input">
                             <div class="field-calculator alternative">
                               <div class="field-label elevators">Nombre d’ascenseurs</div>
-                              <div x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" x-on:update="elevatorCount = $event.detail" class="elevator-spinner">
+                              <div x-on:update="elevatorCount = $event.detail" x-data="spinner({ value: elevatorCount, min: 1, max: 9 })" class="elevator-spinner">
                                 <a x-bind="decrease" href="#" class="elevator-spinner-button decrease w-button"></a>
                                 <div x-text="value" class="elevator-spinner-counter">1</div>
                                 <a x-bind="increase" href="#" class="elevator-spinner-button increase w-button"></a>
@@ -697,7 +697,7 @@
                                       <a x-bind="trigger" href="#" class="w-inline-block"
                                         ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                       /></a>
-                                      <div x-bind="target" x-cloak="1">
+                                      <div x-cloak="1" x-bind="target">
                                         <div class="tooltip calculator">
                                           <div>Information disponible dans la cabine de votre ascenseur.</div>
                                           <div class="tooltip-arrow"></div>
@@ -713,7 +713,7 @@
                                       <a x-bind="trigger" href="#" class="w-inline-block"
                                         ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                       /></a>
-                                      <div x-bind="target" x-cloak="1">
+                                      <div x-cloak="1" x-bind="target">
                                         <div class="tooltip calculator">
                                           <div>Comptez ici les étages, mais également parkings, sous-sols et caves.</div>
                                           <div class="tooltip-arrow"></div>
@@ -735,7 +735,7 @@
                                         <a x-bind="trigger" href="#" class="w-inline-block"
                                           ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                         /></a>
-                                        <div x-bind="target" x-cloak="1">
+                                        <div x-cloak="1" x-bind="target">
                                           <div class="tooltip calculator">
                                             <div>Information disponible dans la cabine de votre ascenseur.</div>
                                             <div class="tooltip-arrow"></div>
@@ -772,7 +772,7 @@
                                         <a x-bind="trigger" href="#" class="w-inline-block"
                                           ><img src="https://uploads-ssl.webflow.com/5f298dde59b99f6dcf794306/616bfd2e445d1c9a769fa4ae_Combined%20Shape.png" loading="lazy" width="16" alt=""
                                         /></a>
-                                        <div x-bind="target" x-cloak="1">
+                                        <div x-cloak="1" x-bind="target">
                                           <div class="tooltip calculator">
                                             <div>Comptez ici le les étages, mais également parkings, sous-sols et caves.</div>
                                             <div class="tooltip-arrow"></div>
@@ -781,7 +781,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div x-data="spinner({ value: elevators[i-1].floors, min: 1, max: 99 })" x-on:update="elevators[i-1].floors = $event.detail" class="spinner">
+                                  <div x-on:update="elevators[i-1].floors = $event.detail" x-data="spinner({ value: elevators[i-1].floors, min: 1, max: 99 })" class="spinner">
                                     <a x-bind="decrease" href="#" class="spinner-button decrease w-button"></a
                                     ><input
                                       type="number"

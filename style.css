@@ -113,6 +113,12 @@ button,
 select {
   text-transform: none;
 }
+button,
+html input[type="button"],
+input[type="reset"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -386,10 +392,9 @@ fieldset {
   margin: 0;
   border: 0;
 }
-button,
-html input[type="button"],
-input[type="reset"] {
-  -webkit-appearance: button;
+[type="button"],
+[type="reset"],
+button {
   border: 0;
   cursor: pointer;
   -webkit-appearance: button;
@@ -457,6 +462,13 @@ label {
 fieldset[disabled] .w-input,
 fieldset[disabled] .w-select {
   cursor: not-allowed;
+}
+.w-input[disabled]:not(.w-input-disabled),
+.w-input[readonly],
+.w-select[disabled]:not(.w-input-disabled),
+.w-select[readonly],
+fieldset[disabled]:not(.w-input-disabled) .w-input,
+fieldset[disabled]:not(.w-input-disabled) .w-select {
   background-color: #eee;
 }
 textarea.w-input,
