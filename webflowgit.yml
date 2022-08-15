@@ -1,3 +1,4 @@
+site: false
 pages:
   ignore:
     - /blog-posts/**
